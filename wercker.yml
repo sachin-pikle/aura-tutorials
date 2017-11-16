@@ -35,7 +35,7 @@ deploy-to-oke:
         
     - script:
         name: wait to delete namespace
-        code: sleep 15
+        code: sleep 30
         
     - kubectl:
         name: create namespace    
