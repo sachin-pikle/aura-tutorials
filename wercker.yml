@@ -94,6 +94,7 @@ testapp:
                   echo "Test failed"
                   exit -1
               fi
+              sleep 2
 
 ui-functional-test:
   box:
