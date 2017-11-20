@@ -1,11 +1,13 @@
 exports.config = {
+  directConnect: true,
   seleniumAddress: 'http://localhost:4444/wd/hub',
-  specs: ['$WERCKER_ROOT/test/creditscore.spec.js'],
+  specs: ['/pipeline/source/test/creditscore.spec.js'],
   capabilities: {
     browserName: 'chrome',
 
     chromeOptions: {
-      args: [ "--headless", "--disable-gpu", "--window-size=800,600" ]
+      args: [ '--no-sandbox', '--headless', '--disable-gpu', '--window-size=800,600' ]
     }
   }
 };
+
