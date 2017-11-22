@@ -76,14 +76,14 @@ deploy-to-oke:
         insecure-skip-tls-verify: true
         command: create -f $WERCKER_ROOT/ingress.yml --namespace=$WERCKER_APPLICATION_OWNER_NAME
 
-testapp:
+functional-test:
   steps:
     - script:
         name: Run and Test microservice
         code: |
               mkdir -p "/pipeline"
               node $WERCKER_ROOT/app.js &
-              sleep 10
+              sleep 5
               CREDITSCORE_URL=http://localhost:3000/creditscore
               echo 'Microservice URL=' $CREDITSCORE_URL
               if curl -X POST -H "Content-Type: application/json" -X POST -d '{"firstname":"John","lastname":"Doe","dateofbirth":"01/01/2015","ssn":"111223333"}' $CREDITSCORE_URL | grep "firstname"
@@ -94,7 +94,7 @@ testapp:
                   echo "Test failed"
                   exit -1
               fi
-              sleep 2
+              sleep 1
 
 ui-functional-test:
   box:
