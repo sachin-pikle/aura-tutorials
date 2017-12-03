@@ -4,9 +4,6 @@ build:
     - script:
         name: A step that executes `npm install` command
         code: npm install  
-    - script:
-        name: Create TLS key and cert
-        code: openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout tls.key -out tls.crt -subj "/CN=nginxsvc/O=nginxsvc"
 
 push-to-releases:
   steps:
@@ -50,13 +47,6 @@ deploy-to-oke:
         token: $KUBERNETES_TOKEN
         insecure-skip-tls-verify: true
         command: create secret docker-registry wrelease --docker-server=wcr.io --docker-username=$WERCKER_APPLICATION_OWNER_NAME --docker-password=$KUBERNETES_TOKEN --docker-email=${WERCKER_APPLICATION_OWNER_NAME}@mail.com --namespace=$WERCKER_APPLICATION_OWNER_NAME
-
-    - kubectl:
-        name: create TLS secret
-        server: $KUBERNETES_MASTER
-        token: $KUBERNETES_TOKEN
-        insecure-skip-tls-verify: true
-        command: create secret tls tls-secret --key $WERCKER_ROOT/tls.key --cert $WERCKER_ROOT/tls.crt --namespace=$WERCKER_APPLICATION_OWNER_NAME
         
     - kubectl:
         name: create deplyoment
