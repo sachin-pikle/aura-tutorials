@@ -5,7 +5,7 @@ angular.module('myApp').factory('CreditService', ['$http', '$q', function($http,
   //var REST_SERVICE_URI = './creditscore';
   
   // Apiary Mock service
-  var REST_SERVICE_URI = 'http://private-c03750-jscreditscore.apiary-mock.com/creditscore';
+  var REST_SERVICE_URI = 'https://private-c03750-jscreditscore.apiary-mock.com/creditscore';
 
   var factory = {
     creditScore: creditScore,
