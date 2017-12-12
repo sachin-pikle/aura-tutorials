@@ -9,6 +9,7 @@ var util = require('util');
 exports.score = function(req, res){
   if (req.is('application/json')) {
 	console.log("JSON IN");
+	  console.log(req.body);
 	  var person = JSON.parse(req.body);
 	  console.log(person);
 	  var firstname = person.firstname,
