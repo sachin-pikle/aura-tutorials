@@ -15,11 +15,16 @@ angular.module('myApp').factory('CreditService', ['$http', '$q', function($http,
 
   function creditScore(user) {
     var deferred = $q.defer();
+
+    console.log("Calling " + REST_SERVICE_URI);
+    console.log(user);
     
     $http.post(REST_SERVICE_URI, JSON.stringify(user))
         .then(
         function (response) {
             deferred.resolve(response.data);
+            console.log("CALL OK");
+            console.log(response.data);
         },
         function(errResponse){
             console.error('Error while determine credit score');
