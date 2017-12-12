@@ -7,12 +7,22 @@ var util = require('util');
  */
 
 exports.score = function(req, res){
-  console.log('Request body: ' + util.inspect(req.body));
-  var firstname = req.body.firstname,
-      lastname = req.body.lastname,
-      dateofbirth = req.body.dateofbirth,
-      ssn = req.body.ssn;
-  
+  if (req.is('application/json')) {
+	console.log("JSON IN");
+	  var person = JSON.parse(req.body);
+	  console.log(person);
+	  var firstname = person.firstname,
+	      lastname = person.lastname,
+	      dateofbirth = person.dateofbirth,
+	      ssn = person.ssn;
+  } else {
+
+	  console.log('Request body: ' + util.inspect(req.body));
+	  var firstname = req.body.firstname,
+	      lastname = req.body.lastname,
+	      dateofbirth = req.body.dateofbirth,
+	      ssn = req.body.ssn;
+  }  
   var score = firstname.hashCode() + lastname.hashCode() + dateofbirth.hashCode() + ssn.hashCode();
   
   score = score % SCORE_MAX;
