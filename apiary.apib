@@ -9,12 +9,21 @@ Returns person's credit score based on personal information.
 
 ### Gets person's credit score [POST]
 
++ Request (application/json)
+
+        {
+            "firstname": "Mika",
+            "lastname": "Rinne",
+            "ssn": "111-22-3333",
+            "dateofbirth": "01/29/1970"
+        }
+
 + Response 200 (application/json)
 
-            {
-                "firstname": "Mika",
-                "lastname": "Rinne",
-                "ssn": "111-22-3333",
-                "dateofbirth": "01/29/1970",
-                "score": 620
-            }
+        {
+            "firstname": "Mika",
+            "lastname": "Rinne",
+            "ssn": "111-22-3333",
+            "dateofbirth": "01/29/1970",
+            "score": 620
+        }
