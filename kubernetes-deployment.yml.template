@@ -27,6 +27,11 @@ spec:
         ports:
         - containerPort: 3000
           protocol: TCP
+        env:
+        - name: USE_MOCK_SVC
+          value: $USE_MOCK_SVC
+        - name: MOCK_SVC_URL
+          value: $MOCK_SVC_URL
       imagePullSecrets:
       - name: wrelease
       restartPolicy: Always
