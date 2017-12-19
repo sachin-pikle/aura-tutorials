@@ -5,40 +5,33 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: rest-jscreditscore
-  labels:
-    run: rest-jscreditscore
+  name: aura-js-creditscore-v1
 spec:
   replicas: 1
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
-    type: RollingUpdate
   template:
     metadata:
       labels:
-        run: rest-jscreditscore
+        app: aura-js-creditscore
+        version: v1        
     spec:
       containers:
-      - image: wcr.io/$WERCKER_APPLICATION_OWNER_NAME/$WERCKER_APPLICATION_NAME:$WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
-        imagePullPolicy: Always
-        name: rest-jscreditscore
+      - name: aura-js-creditscore
+        image: wcr.io/$WERCKER_APPLICATION_OWNER_NAME/$WERCKER_APPLICATION_NAME:$WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
-          protocol: TCP
       imagePullSecrets:
       - name: wrelease
-      restartPolicy: Always
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: rest-jscreditscore-svc
+  name: aura-js-creditscore
+  labels:
+    app: aura-js-creditscore
 spec:
-  selector:
-    run: rest-jscreditscore
   ports:
     - port: 8088
       targetPort: 3000
-  type: ClusterIP
+  selector:
+    app: aura-js-creditscore
