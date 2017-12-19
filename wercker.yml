@@ -33,6 +33,7 @@ deploy-to-oke:
         echo "Installing istioctl"
         curl -L --compressed https://github.com/istio/istio/releases/download/0.2.7/istio-0.2.7-linux.tar.gz | tar -xz -C $PWD && export PATH=${PWD}/istio-0.2.7/bin:$PATH
         pwd
+        
     - script:
       name: Check istioctl version
       code: |
@@ -45,21 +46,20 @@ deploy-to-oke:
         mkdir -p /root/.kube
         echo "
         apiVersion: v1
-        kind: Config
-        preferences: {}
         clusters:
           - cluster:
               insecure-skip-tls-verify: true
               server: ${KUBERNETES_MASTER}
-            name: sachin
+            name: cluster-${CLUSTER_ID}
         contexts:
           - context:
-              cluster: sachin
-              user: sachin
-            name: sachin
-        current-context: sachin
+              cluster: cluster-${CLUSTER_ID}
+              user: user-${CLUSTER_ID}
+            name: context-${CLUSTER_ID}
+        current-context: context-${CLUSTER_ID}
+        kind: ""
         users:
-          - name: sachin
+          - name: user-${CLUSTER_ID}
             user:
               token: ${KUBERNETES_TOKEN}
         " > /root/.kube/config
