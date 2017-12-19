@@ -50,16 +50,16 @@ deploy-to-oke:
           - cluster:
               insecure-skip-tls-verify: true
               server: ${KUBERNETES_MASTER}
-            name: cluster-${CLUSTER_ID}
+            name: cluster-${KUBERNETES_CLUSTER_ID}
         contexts:
           - context:
-              cluster: cluster-${CLUSTER_ID}
-              user: user-${CLUSTER_ID}
-            name: context-${CLUSTER_ID}
-        current-context: context-${CLUSTER_ID}
+              cluster: cluster-${KUBERNETES_CLUSTER_ID}
+              user: user-${KUBERNETES_CLUSTER_ID}
+            name: context-${KUBERNETES_CLUSTER_ID}
+        current-context: context-${KUBERNETES_CLUSTER_ID}
         kind: ""
         users:
-          - name: user-${CLUSTER_ID}
+          - name: user-${KUBERNETES_CLUSTER_ID}
             user:
               token: ${KUBERNETES_TOKEN}
         " > /root/.kube/config
