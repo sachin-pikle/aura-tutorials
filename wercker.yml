@@ -14,9 +14,9 @@ push-to-releases:
         cmd: node /pipeline/source/app.js
 
 deploy-to-oke:
-  box:
-        id: alpine
-        cmd: /bin/sh
+  #box:
+        #id: alpine
+        #cmd: /bin/sh
   steps:
     - bash-template
     
