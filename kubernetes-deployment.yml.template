@@ -35,12 +35,12 @@ spec:
       - name: wrelease
 ---
 ###########################################################################
-# Ingress resource (gateway)
+# Ingress resource
 ##########################################################################
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: gateway
+  name: aura-js-creditscore
   annotations:
     kubernetes.io/ingress.class: "istio"
 spec:
