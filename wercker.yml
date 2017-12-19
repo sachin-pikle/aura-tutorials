@@ -66,9 +66,16 @@ deploy-to-oke:
         " > /root/.kube/config
         
     - script:
-        name: "Visualise Kubernetes config"
+        name: "Visualise Kubernetes deployment"
         code: cat kubernetes-deployment.yml
     
+    - kubectl:
+        name: delete secret
+        server: $KUBERNETES_MASTER
+        token: $KUBERNETES_TOKEN
+        insecure-skip-tls-verify: true
+        command: delete secret wrelease --ignore-not-found
+        
     - kubectl:
         name: create OCR secret
         server: $KUBERNETES_MASTER
