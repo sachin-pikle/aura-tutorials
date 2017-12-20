@@ -53,3 +53,4 @@ spec:
         backend:
           serviceName: aura-js-creditscore
           servicePort: 8088
+---
