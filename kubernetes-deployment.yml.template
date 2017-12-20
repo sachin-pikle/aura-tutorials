@@ -9,7 +9,9 @@ metadata:
     app: aura-js-creditscore
 spec:
   ports:
-    - port: 8088
+    - name: http
+      port: 8088
+      protocol: TCP
       targetPort: 3000
   selector:
     app: aura-js-creditscore
@@ -48,8 +50,8 @@ spec:
   rules:
   - http:
       paths:
-      - path: /creditscore
-        #path: /.*
+      - path: /.*
+        #path: /creditscore
         backend:
           serviceName: aura-js-creditscore
           servicePort: 8088
