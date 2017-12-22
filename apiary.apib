@@ -1,0 +1,29 @@
+FORMAT: 1A
+HOST: http://129.213.79.177/
+
+# jscreditscore
+
+Returns person's credit score based on personal information.
+
+## Credit score [/creditscore]
+
+### Gets person's credit score [POST]
+
++ Request (application/json)
+
+        {
+            "firstname": "John",
+            "lastname": "Doe",
+            "ssn": "111-22-3333",
+            "dateofbirth": "01/29/1970"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "firstname": "John",
+            "lastname": "Doe",
+            "ssn": "111-22-3333",
+            "dateofbirth": "01/29/1970",
+            "score": 620
+        }
