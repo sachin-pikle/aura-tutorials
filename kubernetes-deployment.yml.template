@@ -54,7 +54,7 @@ spec:
         backend:
           serviceName: aura-js-creditscore
           servicePort: 8088
-      - path: /creditscore
+      - path: /api/creditscore
         backend:
           serviceName: aura-js-creditscore
           servicePort: 8088
