@@ -50,8 +50,10 @@ spec:
   - http:
       paths:
       - path: /.*
-        #path: /creditscore
         backend:
           serviceName: aura-js-creditscore
           servicePort: 8088
----
+      - path: /creditscore
+        backend:
+          serviceName: aura-js-creditscore
+          servicePort: 8088
