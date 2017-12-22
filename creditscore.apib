@@ -1,19 +1,19 @@
 FORMAT: 1A
-HOST: https://129.213.15.72/mikarinneoracle/
+HOST: http://129.213.79.177/
 
 # jscreditscore
 
 Returns person's credit score based on personal information.
 
-## Credit score [/creditscore]
+## Credit score [/api/creditscore]
 
 ### Gets person's credit score [POST]
 
 + Request (application/json)
 
         {
-            "firstname": "Mika",
-            "lastname": "Rinne",
+            "firstname": "John",
+            "lastname": "Doe",
             "ssn": "111-22-3333",
             "dateofbirth": "01/29/1970"
         }
@@ -21,8 +21,8 @@ Returns person's credit score based on personal information.
 + Response 200 (application/json)
 
         {
-            "firstname": "Mika",
-            "lastname": "Rinne",
+            "firstname": "John-Mock",
+            "lastname": "Doe-Mock",
             "ssn": "111-22-3333",
             "dateofbirth": "01/29/1970",
             "score": 620
