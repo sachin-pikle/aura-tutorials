@@ -33,7 +33,7 @@ exports.score = function(req, res){
   
   var resultData = { "firstname": firstname, 
 		  "lastname": lastname, 
-		  //"ssn": ssn
+      //"ssn": ssn
           "ssn": "999-99-9999",
 		  "dateofbirth": dateofbirth, 
 		  "score": score
