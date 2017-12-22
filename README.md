@@ -6,6 +6,7 @@ TODO - Explain the app and steps to run it
 
 
 Cleanup - Remove the aura-js-creditscore application from your K8s cluster
+
 $ kubectl delete ing aura-js-creditscore
 ingress "aura-js-creditscore" deleted
 
