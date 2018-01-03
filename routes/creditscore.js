@@ -61,3 +61,37 @@ String.prototype.hashCode = function() {
   }
   return Math.abs(hash);
 };
+
+/*
+ * GET list of all scores. In this version we don't persist any scores so there is nothing to return
+ */
+
+exports.list = function(req, res){
+    if (req.is('application/json')) {
+        console.log("JSON");
+        console.log(req.body);
+        // var person = JSON.parse(JSON.stringify(req.body));
+        // var firstname = person.firstname,
+        //     lastname = person.lastname,
+        //     dateofbirth = person.dateofbirth,
+        //     ssn = person.ssn;
+    } else {
+
+        console.log("NOT JSON");
+        console.log(req.body);
+        // console.log('Request body: ' + util.inspect(req.body));
+        // var firstname = req.body.firstname,
+        //     lastname = req.body.lastname,
+        //     dateofbirth = req.body.dateofbirth,
+        //     ssn = req.body.ssn;
+    }
+
+    var resultData = {
+        "MESSAGE": "NO SCORES SAVED - (SAVE NOT IMPLEMENTED IN THIS VERSION)"
+    };
+
+
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(resultData));
+};
+
