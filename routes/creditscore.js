@@ -87,7 +87,7 @@ exports.list = function(req, res){
     }
 
     var resultData = {
-        "MESSAGE": "NO SCORES SAVED - (SAVE NOT IMPLEMENTED IN THIS VERSION)"
+        "MESSAGE": "NO SCORES SAVED - (SAVE NOT IMPLEMENTED IN aura-js-creditscore V1)"
     };
 
 
