@@ -34,6 +34,7 @@ Note: In this tutorial, we will develop two versions of this service V1 and V2.
 - kubectl installed and working on your machine 
 - "kubectl proxy" runs and you can access the K8s dashboard
 - (OPTIONAL) istioctl installed and working on your machine
+- Can view resources in your OCI tenancy (Ashburn region) from the OCI console
 
 
 ## Tutorial Flow
