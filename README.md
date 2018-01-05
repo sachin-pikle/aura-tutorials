@@ -1,9 +1,16 @@
 
 
-# angular-node creditscore sample app using aura microservices
+# Sample Microservices App - Aura JS Credit Score
 
-**TODO - Explain the app and steps to run it**
+This is a simple microservices application that takes a bunch of parameters and returns a credit score. The application has the following interfaces:
 
+1. Front end UI accesible at "/" - This shows a simple form (UI) to capture the input parameters and to display the returned credit score
+2. REST API POST "/api/creditscore" - This takes input parameters (JSON) and returns the generated credit score (JSON)
+3. REST API GET "/api/creditscore" - This only returns a hardcoded message for now
+
+Note: In this tutorial, we will develop two versions of this service V1 and V2. In V1, we don't save any data. In V2 we will use MongoDB to save/fetch data.
+
+V1 of the application
 
 **Cleanup - Remove the aura-js-creditscore application from your K8s cluster**
 
