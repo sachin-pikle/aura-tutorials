@@ -4,10 +4,16 @@
 
 ## Introduction
 
-This is a simple tutorial for microservices training
+This is a tutorial for microservices training. In this tutorial, we will cover the following features:
+
+* Service Mesh - Deploy a microservice with Istio enabled
+* Canary deployment - Switch traffic from version V1 to version V2
+* Service Brokers - Provision and use a MongoDB instance
+* API-first development
+* CI/CD - Use Wercker to deploy our services
 
 
-## High level spec
+## About the sample application
  
 This is a simple node.js microservices application that takes a bunch of parameters and returns a credit score. The application has the following interfaces:
 
@@ -19,7 +25,8 @@ Note: In this tutorial, we will develop two versions of this service V1 and V2.
 * In version V1 we don't save any data
 * In version V2 we use MongoDB to save/fetch data
  
-The demo/lab we would run would basically accomplish the following
+
+In this tutorial 
 
 * Deploy service 1 to Aura with ISTIO enabled
 * Deploy service 2 v1 to Aura with ISTIO enabled
