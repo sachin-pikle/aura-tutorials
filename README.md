@@ -4,7 +4,8 @@
 
 ## Introduction
 
-This is a tutorial for training of our microservices platform
+This is a simple tutorial for microservices training
+
 
 ## High level spec
  
