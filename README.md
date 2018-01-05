@@ -11,4 +11,4 @@ This is a tutorial for microservices training. In this tutorial, we will cover t
 * Observability - Observe the service runtime behaviour with Vizceral, Zipkin and Grafana (Limited)
 * CI/CD - Use Wercker to deploy our services
 
-For details refer to [](/tutorials/)
+For more details refer to [/tutorials/](/tutorials/)
