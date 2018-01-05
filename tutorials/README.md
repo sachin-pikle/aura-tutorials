@@ -64,7 +64,9 @@ In this tutorial, we will go through the following flow:
 - training-demo git repository cloned
 - Developer tools (NPM, Docker)
 
-## Cleanup - Remove the aura-js-creditscore application from your K8s cluster**
+## Cleanup - 
+
+### Remove the aura-js-creditscore application from your K8s cluster
 
 $ kubectl delete ing aura-js-creditscore  
 ingress "aura-js-creditscore" deleted
@@ -75,14 +77,11 @@ deployment "aura-js-creditscore-v1" deleted
 $ kubectl delete service aura-js-creditscore  
 service "aura-js-creditscore" deleted
 
-
+### Remove the mongodb service broker manually (in case you delete it 
 
 $ kubectl delete deployment mongodb-sb-inst-1-mongodb  
 deployment "mongodb-sb-inst-1-mongodb" deleted
 
 $ kubectl delete service mongodb-sb-inst-1-mongodb  
 service "mongodb-sb-inst-1-mongodb" deleted``
-
-
-
 
