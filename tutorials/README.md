@@ -31,7 +31,8 @@ Note: In this tutorial, we will develop two versions of this service V1 and V2.
 - Full access to CNP end-to-end (pipelines > releases > clusters)
 - OKE 1.8.0 cluster with Aura platform pre-installed (if Aura is not pre-installed follow these [installation steps](https://confluence.oraclecorp.com/confluence/display/AURA/Installation+Steps+on+OKE+1.8.0))
 - kubeconfig file of your OKE cluster downloaded on your machine
-- kubectl installed and working on your machine (to run kubectl proxy to access dashboards)
+- kubectl installed and working on your machine 
+- "kubectl proxy" runs and you can access the K8s dashboard
 - (OPTIONAL) istioctl installed and working on your machine
 
 
