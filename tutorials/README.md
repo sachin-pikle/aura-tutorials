@@ -55,8 +55,6 @@ In this tutorial, we will go through the following flow:
   * TBD - Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
 
-## Step-by-Step guide of running the demo
-
 ## Prerequisites
 
 - K8S config file
@@ -66,7 +64,7 @@ In this tutorial, we will go through the following flow:
 - training-demo git repository cloned
 - Developer tools (NPM, Docker)
 
-**Cleanup - Remove the aura-js-creditscore application from your K8s cluster**
+## Cleanup - Remove the aura-js-creditscore application from your K8s cluster**
 
 $ kubectl delete ing aura-js-creditscore  
 ingress "aura-js-creditscore" deleted
