@@ -27,6 +27,8 @@ Note: In this tutorial, we will develop two versions of this service V1 and V2.
 * In version V2 we use MongoDB to save/fetch data
  
 
+## Tutorial Flow
+
 In this tutorial, we will go through the following flow:
 
 * Deploy microservice version V1 with Istio enabled (using Wercker)
