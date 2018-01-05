@@ -31,7 +31,7 @@ Note: In this tutorial, we will develop two versions of this service V1 and V2.
 
 In this tutorial, we will go through the following flow:
 
-* Part 1 - Deploying your first microservice
+* Part 1 - Deploy your first microservice
   * Deploy microservice version V1 with Istio enabled (using Wercker)
   * Access GET "/api/creditscore" (in a Browser or in Postman)
   * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
