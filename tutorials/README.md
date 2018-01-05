@@ -16,8 +16,8 @@ This is a tutorial for microservices training. In this tutorial, we will cover t
  
 This is a simple node.js microservice application that takes a bunch of parameters, calculates and returns a credit score. The application has the following interfaces:
 
-1. REST API POST "/api/creditscore" - This takes input parameters (JSON) and returns the generated credit score (JSON)
-2. REST API GET "/api/creditscore" - This only returns a hardcoded message for now
+1. REST API GET "/api/creditscore" - This only returns a hardcoded message for now. We will enhance this API in this tutorial
+2. REST API POST "/api/creditscore" - This takes input parameters (JSON) and returns the generated credit score (JSON)
 3. Front end UI accesible at "/" - This shows a simple form (UI) to capture the input parameters and display the returned credit score
 
 Note: In this tutorial, we will develop two versions of this service V1 and V2. 
