@@ -31,24 +31,30 @@ Note: In this tutorial, we will develop two versions of this service V1 and V2.
 
 In this tutorial, we will go through the following flow:
 
-* Part 1
+* Part 1 - Deploying your first microservice
   * Deploy microservice version V1 with Istio enabled (using Wercker)
   * Access GET "/api/creditscore" (in a Browser or in Postman)
-* Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
-* Deploy microservice version V2 with Istio enabled (using Wercker)
-* Access GET "/api/creditscore" (in a Browser or in Postman)
-* See the traffic distribution between versions V1 and V2
-* Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
-* Provision a MongoDb instance using Service Broker
-* Write code to connect microservice version V2 to the MongoDB instance
-* Route 100% traffic to microservice version V2
-* Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
-* Associate API descriptor with the microservice (from the Admin console)
-* Generate Javascript lib (from the Admin console)
-* TBD - Create a new client microservice to use the generated JS library to access the backend rest API
-* TBD - Deploy this new client microservice with Istio enabled (using Wercker)
-* TBD - Access the new client microservice
-* TBD - Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
+  * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
+
+* Part 2 - Canary deployment
+  * Deploy microservice version V2 with Istio enabled (using Wercker)
+  * Access GET "/api/creditscore" (in a Browser or in Postman)
+  * See the traffic distribution between versions V1 and V2
+  * Route 100% traffic to microservice version V2
+  * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
+
+* Part 3 - Service broker integration
+  * Provision a MongoDb instance using Service Broker
+  * Write code to connect microservice version V2 to the MongoDB instance
+  * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
+
+* Part 4 - API-first development exprience
+  * Associate API descriptor with the microservice (from the Admin console)
+  * Generate Javascript lib (from the Admin console)
+  * TBD - Create a new client microservice to use the generated JS library to access the backend rest API
+  * TBD - Deploy this new client microservice with Istio enabled (using Wercker)
+  * TBD - Access the new client microservice
+  * TBD - Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
 
 ## Step-by-Step guide of running the demo
