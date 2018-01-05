@@ -85,5 +85,9 @@ $ kubectl delete deployment mongodb-sb-inst-1-mongodb
 deployment "mongodb-sb-inst-1-mongodb" deleted
 
 $ kubectl delete service mongodb-sb-inst-1-mongodb  
-service "mongodb-sb-inst-1-mongodb" deleted``
+service "mongodb-sb-inst-1-mongodb" deleted
+
+$ kubectl delete secret mongodb-sb-inst-1-mongodb secret-mongodb-sb-inst-1  
+secret "mongodb-sb-inst-1-mongodb" deleted
+secret "secret-mongodb-sb-inst-1" deleted  
 
