@@ -57,12 +57,13 @@ In this tutorial, we will go through the following flow:
 
 ## Prerequisites
 
-- K8S config file
-- Aura platform distribution
-- Installer requirements (kubectl, helm)
-- istioctl installed
-- training-demo git repository cloned
-- Developer tools (NPM, Docker)
+- GitHub account
+- Full access to CNP end-to-end (pipelines > releases > clusters)
+- OKE 1.8.0 cluster with Aura platform pre-installed (if Aura is not pre-installed follow these [installation steps](https://confluence.oraclecorp.com/confluence/display/AURA/Installation+Steps+on+OKE+1.8.0))
+- kubeconfig file of your OKE cluster
+- kubectl installed and working
+- OPTIONAL (istioctl installed and working)
+
 
 ## Cleanup 
 
