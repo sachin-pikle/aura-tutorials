@@ -34,19 +34,19 @@ In this tutorial, we will go through the following flow:
   * Access GET "/api/creditscore" (in a Browser or in Postman)
   * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
-* Part 2 - Canary deployment
+* [Part 2 - Canary deployment](canary_deploy.md)
   * Deploy microservice version V2 with Istio enabled (using Wercker)
   * Access GET "/api/creditscore" (in a Browser or in Postman)
   * See the traffic distribution between versions V1 and V2
   * Route 100% traffic to microservice version V2
   * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
-* Part 3 - Service broker integration
+* [Part 3 - Service broker integration](service_broker.md)
   * Provision a MongoDb instance using Service Broker
   * Write code to connect microservice version V2 to the MongoDB instance
   * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
-* Part 4 - API-first development exprience
+* [Part 4 - API-first development exprience](api_first.md)
   * Associate API descriptor with the microservice (from the Admin console)
   * Generate Javascript lib (from the Admin console)
   * TBD - Create a new client microservice to use the generated JS library to access the backend rest API
