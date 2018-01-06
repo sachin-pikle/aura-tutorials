@@ -8,15 +8,20 @@ In this tutorial, we will go through the following flow:
 
 ### Provision a MySQL instance using Service Broker
 
-Admin screenshot 1 
-
-Admin screenshot 2
-
-
-kubectl apply -f ../mysql-pvc.yaml
+Provision a PVC / PV / OCI Block Volume
+$ kubectl apply -f mysql-pvc.yaml
 
 persistentvolumeclaim "mysql-pvc-01" created
 
+
+Check the PVC from the Kubernetes Dashboard
+![](/images/sb-mysql-pvc.png)
+
+Check the PV from the Kubernetes Dashboard
+![](/images/sb-mysql-pv.png)
+
+Check the Block Volume from the OCI console
+![](/images/sb-mysql-oci-block-volumes.png)
 
 
 Provisioner logs 
@@ -46,6 +51,12 @@ I0106 17:29:22.420505       1 controller.go:644] volume "abuwcljsaawe4p22kmypedl
 I0106 17:29:22.420531       1 controller.go:680] volume "abuwcljsaawe4p22kmypedlm63iunro5vq4wfmhh3jl4253fd4vpz4n6tlea" provisioned for claim "default/mysql-pvc-01"
 
 I0106 17:29:24.268605       1 leaderelection.go:196] stopped trying to renew lease to provision for pvc default/mysql-pvc-01, task succeeded
+
+
+Admin screenshot 1 
+
+Admin screenshot 2
+
 
 ### Write code to connect microservice version V2 to the MongoDB instance
 
