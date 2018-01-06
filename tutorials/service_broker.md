@@ -15,7 +15,7 @@ persistentvolumeclaim "mysql-pvc-01" created
 
 
 2. Check the PVC from the Kubernetes Dashboard
-![Persistent Volume Claim](images/sb-mysql-pvc.png "PVC")
+![Persistent Volume Claim](images/sb-mysql-pvc.png)
 
 3. Check the PV from the Kubernetes Dashboard
 ![Persistent Volume](images/sb-mysql-pv.png)
@@ -55,8 +55,45 @@ I0106 17:29:24.268605       1 leaderelection.go:196] stopped trying to renew lea
 
 5. Go to Admin console > [Service Brokers](http://127.0.0.1:8001/api/v1/namespaces/default/services/aura-admin-service:admin-service/proxy/console/#/serviceBrokers) 
 
+![Service Brokers](images/sb-list-pre.png)
 
-6. Admin screenshot 2
+
+6. Create a new Instance with the following values
+
+Service Name: mysql-sb-inst-1
+
+Plan: Basic
+
+Parameters: 
+
+key: persistence.existingClaim
+
+value: mysql-pvc-01  ... This is the name of the pvc we created above
+
+![Create Instance](images/sb-mysql-create.png)
+
+
+7. Created 
+
+![Instance Created](images/sb-mysql-created.png)
+
+
+8. Service Brokers home
+
+![Service Brokers](images/sb-list-post.png)
+
+
+9. Search "sb-inst" from the K8s dashboard
+
+![MySQL Service Broker K8s Elements](images/sb-mysql-sb-inst-01-k8s-dashboard-1.png)
+
+![MySQL Service Broker K8s Elements](images/sb-mysql-sb-inst-01-k8s-dashboard-2.png)
+
+10. OCI Dashboard you will see the block volume attached to an OCI instance
+
+![Block Volume](images/sb-mysql-oci-block-volumes-attached.png)
+
+
 
 
 ### Write code to connect microservice version V2 to the MongoDB instance
