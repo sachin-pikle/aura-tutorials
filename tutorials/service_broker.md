@@ -15,13 +15,13 @@ persistentvolumeclaim "mysql-pvc-01" created
 
 
 Check the PVC from the Kubernetes Dashboard
-![](/images/sb-mysql-pvc.png)
+![Persistent Volume Claim](images/sb-mysql-pvc.png)
 
 Check the PV from the Kubernetes Dashboard
-![](/images/sb-mysql-pv.png)
+![Persistent Volume](images/sb-mysql-pv.png)
 
 Check the Block Volume from the OCI console
-![](/images/sb-mysql-oci-block-volumes.png)
+![Block Volume](images/sb-mysql-oci-block-volumes.png)
 
 
 Provisioner logs 
