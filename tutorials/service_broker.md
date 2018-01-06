@@ -4,6 +4,11 @@
 
 In this tutorial, we will go through the following flow:
 
+* Provision a MongoDb instance using Service Broker
+* Write code to connect microservice version V2 to the MongoDB instance
+* Access GET "/api/creditscore" (in a Browser or in Postman)
+* Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
+
 ## Steps
 
 ### Provision a MySQL instance using Service Broker
