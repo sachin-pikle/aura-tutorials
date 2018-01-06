@@ -6,7 +6,7 @@ This is a tutorial for microservices training. In this tutorial, we will cover t
 
 * Service Mesh - Deploy a microservice with Istio enabled
 * Canary deployment - Switch traffic from version V1 to version V2
-* Service Brokers - Provision and use a MongoDB instance
+* Service Brokers - Provision and use a MySQL instance
 * API-first development
 * Observability - Observe the service runtime behaviour with Vizceral, Zipkin and Grafana (Limited)
 * CI/CD - Use Wercker to deploy our services
@@ -22,7 +22,7 @@ This is a simple node.js microservice application that takes a bunch of paramete
 
 Note: In this tutorial, we will develop two versions of this service V1 and V2. 
 * In version V1 we don't save any data
-* In version V2 we use MongoDB to save/fetch data
+* In version V2 we use MySQL to save/fetch data
  
 
 ## Prerequisites
@@ -91,4 +91,10 @@ service "mongodb-sb-inst-1-mongodb" deleted
 $ kubectl delete secret mongodb-sb-inst-1-mongodb secret-mongodb-sb-inst-1  
 secret "mongodb-sb-inst-1-mongodb" deleted
 secret "secret-mongodb-sb-inst-1" deleted  
+
+
+Delete PVC / PV / OCI BV
+
+$ kubectl delete -f ../oke-pvc.yaml  
+persistentvolumeclaim "mysql-pvc-01" deleted
 
