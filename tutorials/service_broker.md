@@ -15,7 +15,7 @@ persistentvolumeclaim "mysql-pvc-01" created
 
 
 Check the PVC from the Kubernetes Dashboard
-![Persistent Volume Claim](images/sb-mysql-pvc.png)
+![Persistent Volume Claim](images/sb-mysql-pvc.png "PVC")
 
 Check the PV from the Kubernetes Dashboard
 ![Persistent Volume](images/sb-mysql-pv.png)
