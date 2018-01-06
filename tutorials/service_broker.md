@@ -8,23 +8,23 @@ In this tutorial, we will go through the following flow:
 
 ### Provision a MySQL instance using Service Broker
 
-Provision a PVC / PV / OCI Block Volume
+1. Provision a PVC / PV / OCI Block Volume
 $ kubectl apply -f mysql-pvc.yaml
 
 persistentvolumeclaim "mysql-pvc-01" created
 
 
-Check the PVC from the Kubernetes Dashboard
+2. Check the PVC from the Kubernetes Dashboard
 ![Persistent Volume Claim](images/sb-mysql-pvc.png "PVC")
 
-Check the PV from the Kubernetes Dashboard
+3. Check the PV from the Kubernetes Dashboard
 ![Persistent Volume](images/sb-mysql-pv.png)
 
-Check the Block Volume from the OCI console
+4. Check the Block Volume from the OCI console
 ![Block Volume](images/sb-mysql-oci-block-volumes.png)
 
 
-Provisioner logs 
+5. Check the Volume Provisioner logs 
 
 I0106 17:29:22.224399       1 controller.go:893] scheduleOperation[lock-provision-default/mysql-pvc-01[223367d8-f307-11e7-92b2-0a580aed6036]]
 
@@ -53,9 +53,10 @@ I0106 17:29:22.420531       1 controller.go:680] volume "abuwcljsaawe4p22kmypedl
 I0106 17:29:24.268605       1 leaderelection.go:196] stopped trying to renew lease to provision for pvc default/mysql-pvc-01, task succeeded
 
 
-Admin screenshot 1 
+5. Go to Admin console > [Service Brokers](http://127.0.0.1:8001/api/v1/namespaces/default/services/aura-admin-service:admin-service/proxy/console/#/serviceBrokers) 
 
-Admin screenshot 2
+
+6. Admin screenshot 2
 
 
 ### Write code to connect microservice version V2 to the MongoDB instance
