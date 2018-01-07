@@ -86,18 +86,18 @@ Value: mysql-pvc-01  ... This is the name of the PVC we created above
 ![Instance Created](images/sb-mysql-created.png)
 
 
-8. Service Brokers home
+9. Service Brokers home
 
 ![Service Brokers](images/sb-list-post.png)
 
 
-9. Search "sb-inst" from the K8s dashboard
+10. Search "sb-inst" from the K8s dashboard
 
 ![MySQL Service Broker K8s Elements](images/sb-mysql-sb-inst-01-k8s-dashboard-1.png)
 
 ![MySQL Service Broker K8s Elements](images/sb-mysql-sb-inst-01-k8s-dashboard-2.png)
 
-10. OCI Dashboard you will see the block volume attached to an OCI instance
+11. OCI Dashboard you will see the block volume attached to an OCI instance
 
 ![Block Volume](images/sb-mysql-oci-block-volumes-attached.png)
 
@@ -146,15 +146,15 @@ Add screenshot
 
 Add screenshot
 
-2. Access Vizceral console
+2. Access Vizceral console (Limited for now - e.g. MySQL not visible currently, on the roadmap)
 
 Add screenshot
 
-3. Access Grafana dashboard
+3. Access Grafana dashboard (Limited for now - e.g. MySQL not visible currently, on the roadmap)
 
 Add screenshot
 
-4. Access Zipkin and Find the last 10, sort by Newest first.
+4. Access Zipkin and Find the last 10, sort by Newest first (Limited for now - e.g. MySQL not visible currently, on the roadmap)
 
 Add screenshot
 
