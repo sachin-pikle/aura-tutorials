@@ -158,12 +158,12 @@ Find the last 10, sort by Newest first.
 
 **b) Zipkin Tracing Second Level**
 
-Explore trace by clicking on the first item
+Explore trace by clicking on the first span
 
 ![Zipkin Level 2](images/ms-zipkin-level-2.png)
 
 **c) Zipkin Tracing Additional Details**
 
-Get additional trace details by clicking on ""
+Get additional trace details by clicking on the first line of the span "aura-js-creditscore"
 
 ![Zipkin Level 3](images/ms-zipkin-level-3.png)
