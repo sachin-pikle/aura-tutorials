@@ -89,7 +89,7 @@ In this tutorial, we will go through the following flow:
 	
 	3.7. Check the pod logs
 
-	![Pod Logs](images/ms-w-run-initial-pod-logs.png)
+	![Pod Logs](images/ms-w-run-initial-pod-logs-v2.png)
 	
 
 ### Access GET "/api/creditscore" (in Browser/Postman) and observe the requests distributed between versions V1 and V2
