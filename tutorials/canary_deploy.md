@@ -154,7 +154,7 @@ Click on the circle next to "My Cluster". And you will see traffic flowing from 
 
 Click on the service circle named "aura-js-creditscore". And you will see additional details about your running aura-js-creditscore service
 
-![Vizceral Console Level 3](images/ms-vizceral-level-3.png)
+![Vizceral Console Level 3](images/ms-vizceral-level-3-v2.png)
 
 3. Access Grafana dashboard (Limited visibility for now, more on the roadmap)
 
@@ -178,10 +178,10 @@ Find the last 10, sort by Newest first.
 
 Explore trace by clicking on the first span
 
-![Zipkin Level 2](images/ms-zipkin-level-2.png)
+![Zipkin Level 2](images/ms-zipkin-level-2-v2.png)
 
 **c) Zipkin Tracing Additional Details**
 
 Get additional trace details by clicking on the first line of the span "aura-js-creditscore"
 
-![Zipkin Level 3](images/ms-zipkin-level-3.png)
+![Zipkin Level 3](images/ms-zipkin-level-3-v2.png)
