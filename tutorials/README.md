@@ -56,6 +56,7 @@ In this tutorial, we will go through the following flow:
 * [Part 3 - Service broker integration](service_broker.md)
   * Provision a MongoDb instance using Service Broker
   * Write code to connect microservice version V2 to the MongoDB instance
+  * Access GET "/api/creditscore" (in a Browser or in Postman)
   * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
 * [Part 4 - API-first development exprience](api_first.md)
@@ -93,8 +94,21 @@ secret "mongodb-sb-inst-1-mongodb" deleted
 secret "secret-mongodb-sb-inst-1" deleted  
 
 
-Delete PVC / PV / OCI BV
+### Delete PVC / PV / OCI BV
 
 $ kubectl delete -f ../oke-pvc.yaml  
 persistentvolumeclaim "mysql-pvc-01" deleted
 
+
+### Alternate way to provision PVC / PV / OCI BV
+Go to the <aura-installer-dir> and execute the following command  
+$ ./bin/volumectl.sh --name mysql-pvc-01 --type pvc --oci-ad US-ASHBURN-AD-1 --create  
+Creating PersistentVolumeClaim mysql-pvc-01 in OKE cluster ...
+
+### Alternate way to delete PVC / PV / OCI BV
+Go to the <aura-installer-dir> and execute the following command  
+$ ./bin/volumectl.sh -n mysql-pvc-01 -t pvc -d  
+Deleting PersistenceVolumeClaim mysql-pvc-01 in OKE cluster ...
+
+Note:
+The storage value in PVC yaml file should be between 50 GB and 16384 GB. Min. block storage = 50Gi
