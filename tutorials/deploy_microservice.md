@@ -61,6 +61,7 @@ In this tutorial, we will go through the following flow:
 	3.1. Edit [V1 > aura-js-creditscore/routes/creditscore.js](../routes/creditscore.js)
 
 	3.2. Look for the following line and make the requested changes
+	
 	`// _CHANGE_ : Please comment the line with the DUMMY message and uncomment the one with the Welcome message`
 
 	3.3. Commit the change
@@ -92,8 +93,8 @@ In this tutorial, we will go through the following flow:
 
 2. (OPTIONAL) Access GET /api/creditscore in Postman and you should see the same Welcome message
 
-`{
-    "MESSAGE": "Welcome to aura-js-creditscore version V1"
+`{  
+    "MESSAGE": "Welcome to aura-js-creditscore version V1"  
 }`
 
 ![Access API in Postman](images/ms-api-access-postman-output-v1.png)
