@@ -29,12 +29,14 @@ Note: In this tutorial, we will develop two versions of this service V1 and V2.
 
 - GitHub account
 - Full access to CNP end-to-end (pipelines > releases > clusters)
+- OCI LB quota. Should have room to create at least 1 LB for Istio ingress controller - this is a pre-requisite to install Aura which in turn installs Istio
 - OKE 1.8.0 cluster with Aura platform pre-installed (if Aura is not pre-installed follow these [installation steps](https://confluence.oraclecorp.com/confluence/display/AURA/Installation+Steps+on+OKE+1.8.0))
 - kubeconfig file of your OKE cluster downloaded on your machine
 - kubectl installed and working on your machine 
 - "kubectl proxy" runs and you can access the K8s dashboard
 - (OPTIONAL) istioctl installed and working on your machine
 - Can view resources in your OCI tenancy (Ashburn region) from the OCI console
+- Sufficient OCI block volume storage. At least 100 GB of block volume available to provision the service broker instance (uses 50 GB)
 
 
 ## Tutorial Flow
