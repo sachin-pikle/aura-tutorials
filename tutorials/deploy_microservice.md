@@ -26,7 +26,15 @@ In this tutorial, we will go through the following flow:
 
 	2.2. Add application
 
-	2.3. Review the [wercker.yml](../wercker.yml) file
+	2.3. Review the [wercker.yml](../wercker.yml) file. Note the following differences as we use Istio side cars alongside our microservice
+	
+	**a) kubectl step with embedded istioctl command for istio side car injection (manual)**
+	
+	![wercker.yml inject istio side car](images/ms-w-yml-istio-sidecar-inject.png)
+	
+	**b) workaround since wercker doesn't support embedded istioctl commands**
+	
+	![wercker.yml inject istio side car](images/ms-w-yml-istio-workaround.png)
 
 	2.4. Set up push-to-CR and deploy-to-CE pipelines
 	
