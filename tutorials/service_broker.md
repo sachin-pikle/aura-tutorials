@@ -15,8 +15,8 @@ In this tutorial, we will go through the following flow:
 
 1. Provision a PVC / PV / OCI Block Volume
 
-$ kubectl apply -f mysql-pvc.yaml  
-persistentvolumeclaim "mysql-pvc-01" created
+    $ kubectl apply -f mysql-pvc.yaml  
+    persistentvolumeclaim "mysql-pvc-01" created
 
 
 2. Check the PVC from the Kubernetes Dashboard
@@ -31,9 +31,9 @@ persistentvolumeclaim "mysql-pvc-01" created
 
 5. Check the Volume Provisioner logs 
 
-I0106 17:29:22.224399       1 controller.go:893] scheduleOperation[lock-provision-default/mysql-pvc-01[223367d8-f307-11e7-92b2-0a580aed6036]]
+    I0106 17:29:22.224399       1 controller.go:893] scheduleOperation[lock-provision-default/mysql-pvc-01[223367d8-f307-11e7-92b2-0a580aed6036]]
 
-I0106 17:29:22.232035       1 controller.go:893] scheduleOperation[lock-provision-default/mysql-pvc-01[223367d8-f307-11e7-92b2-0a580aed6036]]
+    I0106 17:29:22.232035       1 controller.go:893] scheduleOperation[lock-provision-default/mysql-pvc-01[223367d8-f307-11e7-92b2-0a580aed6036]]
 
 I0106 17:29:22.246731       1 leaderelection.go:154] attempting to acquire leader lease...
 
