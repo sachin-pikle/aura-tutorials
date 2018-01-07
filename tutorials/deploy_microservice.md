@@ -13,52 +13,52 @@ In this tutorial, we will go through the following flow:
 ### Deploy microservice version V1 with Istio enabled (using Wercker)
 
 1. Set up the source code repo
+	
+	We will use an existing application for this tutorial.
 
-We will use an existing application for this tutorial.
+	1.1. Sign in to [GitHub](https://github.com)
 
-1.1. Sign in to [GitHub](https://github.com)
-
-1.2. Go to Sachin's GitHub repo [aura-js-creditscore](https://github.com/sachin-pikle/aura-js-creditscore) and fork it. You now have your own working copy of the repo version V1
+	1.2. Go to Sachin's GitHub repo [aura-js-creditscore](https://github.com/sachin-pikle/aura-js-creditscore) and fork it. You now have your own working copy of the repo version V1
 
 2. Set up the Wercker CI/CD
 
-2.1. Sign in to [Wercker](https://app.wercker.com)
+	2.1. Sign in to [Wercker](https://app.wercker.com)
 
-2.2. Add application
+	2.2. Add application
 
-2.3. Review the [wercker.yml](../wercker.yml) file
+	2.3. Review the [wercker.yml](../wercker.yml) file
 
-2.4. Set up the pipelines
+	2.4. Set up the pipelines
 
-Add images of each of the three pipelines
+	Add images of each of the three pipelines
 
-2.5. Set up the workflow
+	2.5. Set up the workflow
 
-Add workflow image
+	Add workflow image
 
 3. Deploy the app using wercker CI/CD
 
-3.1. Go to [V1 > view.ejs]()
+	3.1. Go to [V1 > view.ejs]()
 
-3.2. Change title - add V1 
+	3.2. Change title - add V1 
 
-3.3. Commit the change
+	3.3. Commit the change
 
-3.4. Wercker will fire the CI/CD workflow for V1. Check the progress on Wercker Pipelines > Runs.
+	3.4. Wercker will fire the CI/CD workflow for V1. Check the progress on Wercker Pipelines > Runs.
 
-Add screenshot
+	Add screenshot
 
-3.5. Check Releases to confirm the new container image has been uploaded
+	3.5. Check Releases to confirm the new container image has been uploaded
 
-Add screenshot
+	Add screenshot
 
-3.6. Check the Kubernetes dashboard to see if the latest version got deployed. Takes ~35 seconds for K8s to terminate the old pods and start the new pod
+	3.6. Check the Kubernetes dashboard to see if the latest version got deployed. Takes ~35 seconds for K8s to terminate the old pods and start the new pod
 
-Add screenshot
+	Add screenshot
 
-3.7. Check the pod logs
+	3.7. Check the pod logs
 
-Add screenshot
+	Add screenshot
 
 
 ### Access GET "/api/creditscore" (in a Browser or in Postman)
