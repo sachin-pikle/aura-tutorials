@@ -104,20 +104,29 @@ In this tutorial, we will go through the following flow:
 
 1. Check the pod logs
 
-Add screenshot
+![Pod Logs](images/ms-pod-logs-v1.png)
 
 2. Access Vizceral console (Limited for now)
 
-Add screenshot
+Known Issue: Screen shows the data flowing for ~1 minute. Screen doesn't refresh automatically and must be refreshed manually
+
+![Vizceral Console Level 1](images/ms-vizceral-level-1.png)
+
+![Vizceral Console Level 2](images/ms-vizceral-level-2.png)
+
+![Vizceral Console Level 3](images/ms-vizceral-level-3.png)
 
 3. Access Grafana dashboard (Limited for now)
 
-Add screenshot
+![Grafana Part 1](images/ms-grafana-part-1.png)
+![Grafana Part 2](images/ms-grafana-part-2.png)
 
 4. Access Zipkin and Find the last 10, sort by Newest first (Limited for now)
 
-Add screenshot
+![Zipkin Level 1](images/ms-zipkin-level-1.png)
 
 5. Explore trace (Limited for now)
 
-Add screenshot
+![Zipkin Level 2](images/ms-zipkin-level-2.png)
+
+![Zipkin Level 3](images/ms-zipkin-level-3.png)
