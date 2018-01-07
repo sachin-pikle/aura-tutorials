@@ -114,27 +114,56 @@ In this tutorial, we will go through the following flow:
 
 ![Pod Logs](images/ms-pod-logs-v1.png)
 
-2. Access Vizceral console (Limited for now)
+2. Access Vizceral console (Limited visibility for now, more on the roadmap)
 
-Known Issue: Screen shows the data flowing for ~1 minute. Screen doesn't refresh automatically and must be refreshed manually
+Known Issue: Screen shows the data flowing for ~1 minute. This view doesn't refresh automatically and must be refreshed manually by reloading the top level console
+
+URL: http://127.0.0.1:8001/api/v1/namespaces/default/services/aura-admin-service:admin-service/proxy/console/#/vizceral
+
+**a) Vizceral Console Top Level**
+
+You will see traffic flowing from the internet in to your cluster. Note the service "aura-js-creditscore" pod is deployed in a single AD.
 
 ![Vizceral Console Level 1](images/ms-vizceral-level-1.png)
 
+**b) Vizceral Console Next Level Drill Down**
+
+Click on the circle next to "My Cluster". And you will see traffic flowing from the internet into your "aura-js-creditscore" service.
+
 ![Vizceral Console Level 2](images/ms-vizceral-level-2.png)
+
+**b) Vizceral Console Service Details**
+
+Click on the service circle named "aura-js-creditscore". And you will see additional details about your running aura-js-creditscore service
 
 ![Vizceral Console Level 3](images/ms-vizceral-level-3.png)
 
-3. Access Grafana dashboard (Limited for now)
+3. Access Grafana dashboard (Limited visibility for now, more on the roadmap)
+
+URL: http://127.0.0.1:8001/api/v1/namespaces/default/services/aura-admin-service:admin-service/proxy/console/#/grafana
 
 ![Grafana Part 1](images/ms-grafana-part-1.png)
+
 ![Grafana Part 2](images/ms-grafana-part-2.png)
 
-4. Access Zipkin and Find the last 10, sort by Newest first (Limited for now)
+4. Access Zipkin tracing (Limited visibility for now, more on the roadmap)
+
+URL: http://127.0.0.1:8001/api/v1/namespaces/default/services/aura-admin-service:admin-service/proxy/console/#/zipkin
+
+Find the last 10, sort by Newest first.
+
+**a) Zipkin Tracing Top Level**
 
 ![Zipkin Level 1](images/ms-zipkin-level-1.png)
 
-5. Explore trace (Limited for now)
+**b) Zipkin Tracing Second Level**
+
+Explore trace by clicking on the first item
 
 ![Zipkin Level 2](images/ms-zipkin-level-2.png)
+
+**c) Zipkin Tracing Additional Details**
+
+Get additional trace details by clicking on ""
 
 ![Zipkin Level 3](images/ms-zipkin-level-3.png)
