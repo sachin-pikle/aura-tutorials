@@ -63,9 +63,12 @@ I0106 17:29:24.268605       1 leaderelection.go:196] stopped trying to renew lea
 ![Service Brokers](images/sb-list-pre.png)
 
 
-6. Create a new Instance with the following values
+6. Select MySQL
 
-Service Name: mysql-sb-inst-1
+
+7. Create a new MySQL SB Instance with the following values
+
+Instance Name: mysql-sb-inst-1
 
 Plan: basic
 
@@ -78,7 +81,7 @@ Value: mysql-pvc-01  ... This is the name of the PVC we created above
 ![Create Instance](images/sb-mysql-create.png)
 
 
-7. Created 
+8. MySQL SB instance created 
 
 ![Instance Created](images/sb-mysql-created.png)
 
@@ -101,9 +104,62 @@ Value: mysql-pvc-01  ... This is the name of the PVC we created above
 
 
 
-### Write code to connect microservice version V2 to the MongoDB instance
+### Write code to connect microservice version V2 to the MySQL instance
+
+1. Go to [V2 > creditscore.js]()
+
+2. Uncomment code to connect to MYSQL
+
+3. Commit the change
+
+4. Wercker will fire the CI/CD workflow for V2. Check the progress on Wercker Pipelines > Runs.
+
+Add screenshot
+
+5. Check Releases to confirm the new container image has been uploaded
+
+Add screenshot
+
+6. Check the Kubernetes dashboard to see if the latest version got deployed. Takes ~35 seconds for K8s to terminate the old pods and start the new pod
+
+Add screenshot
+
+7. Check the pod logs
+
+Add screenshot
+
 
 ### Access GET "/api/creditscore" (in a Browser or in Postman)
 
+1. Access GET /api/creditscore in a browser and see the response
+
+Add screenshot
+
+2. (OPTIONAL) Access GET /api/creditscore in Postman and see the response
+
+Add screenshot
+
+
 ### Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
+
+1. Check the pod logs
+
+Add screenshot
+
+2. Access Vizceral console
+
+Add screenshot
+
+3. Access Grafana dashboard
+
+Add screenshot
+
+4. Access Zipkin and Find the last 10, sort by Newest first.
+
+Add screenshot
+
+5. Explore trace (Limited for now - e.g. MySQL not visible currently, on the roadmap)
+
+Add screenshot
+
 
