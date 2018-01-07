@@ -16,19 +16,25 @@ In this tutorial, we will go through the following flow:
 
 We will use an existing application for this tutorial.
 
-1.1. Sign in to your GitHub page, and wercker account
+1.1. Sign in to [GitHub](https://github.com)
 
-1.2. Go to Sachin's GitHub repo [V1]() and fork it. You now have your own working copy of the repo V1
+1.2. Go to Sachin's GitHub repo [aura-js-creditscore](https://github.com/sachin-pikle/aura-js-creditscore) and fork it. You now have your own working copy of the repo version V1
 
-2. Set up the wercker CI/CD
+2. Set up the Wercker CI/CD
 
-2.1. Add application
+2.1. Sign in to [Wercker](https://app.wercker.com)
 
-2.2. Review the wercker.yml file
+2.2. Add application
 
-2.3. Set up pipelines
+2.3. Review the [wercker.yml](../wercker.yml) file
 
-2.4. Set up the workflow
+2.4. Set up the pipelines
+
+Add images of each of the three pipelines
+
+2.5. Set up the workflow
+
+Add workflow image
 
 3. Deploy the app using wercker CI/CD
 
