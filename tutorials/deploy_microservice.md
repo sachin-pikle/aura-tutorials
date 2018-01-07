@@ -30,29 +30,29 @@ In this tutorial, we will go through the following flow:
 
 	2.4. Set up push-to-CR and deploy-to-CE pipelines
 	
-	Pipeline: push-to-CR
+	**a) Pipeline: Create push-to-CR pipeline**
 	
 	![push-to-CR Pipeline](images/ms-w-pipeline-push-to-CR.png)
 	
-	Pipeline: deploy-to-CE
+	**b) Pipeline: Create deploy-to-CE pipeline with environment variables**
 	
 	![deploy-to-CE Pipeline](images/ms-w-pipeline-deploy-to-CE.png)
 	
-	List of all your pipelines:
+	**c) List of all your pipelines:**
 	
 	![All Pipelines](images/ms-w-pipelines.png)
 
 	2.5. Set up the workflow
 	
-	Workflow: Add push-to-CR pipeline
+	**a) Workflow: Add push-to-CR pipeline**
 	
 	![Add push-to-CR pipeline to Workflow](images/ms-w-workflow-add-push-to-CR.png)
 	
-	Workflow: Add deploy-to-CE pipeline
+	**b) Workflow: Add deploy-to-CE pipeline**
 	
 	![Add deploy-to-CE pipeline to Workflow](images/ms-w-workflow-add-deploy-to-CE.png)
 	
-	List of all your workflows:
+	**c) List of all your workflows:**
 	
 	![All Workflows](images/ms-w-workflows.png)
 
