@@ -60,11 +60,12 @@ In this tutorial, we will go through the following flow:
 
 	3.1. Edit [V1 > aura-js-creditscore/routes/creditscore.js](../routes/creditscore.js)
 
-	3.2. Look for `// _CHANGE_ : Please comment the line with the DUMMY message and uncomment the one with the Welcome message` and make the requested change
+	3.2. Look for the following line and make the requested changes
+	`// _CHANGE_ : Please comment the line with the DUMMY message and uncomment the one with the Welcome message`
 
 	3.3. Commit the change
 
-	3.4. Wercker will fire a workflow run for V1. Check the progress on Wercker Pipelines > Runs.
+	3.4. Wercker will fire a workflow run for V1. Check the progress on Wercker Pipelines > Runs
 
 	![Workflow run](images/ms-w-run-initial-msg-change.png)
 	
@@ -83,15 +84,17 @@ In this tutorial, we will go through the following flow:
 
 ### Access GET "/api/creditscore" (in a Browser or in Postman)
 
-1. Access GET /api/creditscore in a browser and you should see the following Welcome from V1 message
+1. Access GET /api/creditscore in a browser and you should see the following Welcome message
 
-{"MESSAGE":"Welcome to aura-js-creditscore version V1"}
+`{ "MESSAGE": "Welcome to aura-js-creditscore version V1" }`
 
 ![Access API in Browser](images/ms-api-access-browser-output-v1.png)
 
-2. (OPTIONAL) Access GET /api/creditscore in Postman and you should see the same Welcome from V1 message
+2. (OPTIONAL) Access GET /api/creditscore in Postman and you should see the same Welcome message
 
-{"MESSAGE":"Welcome to aura-js-creditscore version V1"}
+`{
+    "MESSAGE": "Welcome to aura-js-creditscore version V1"
+}`
 
 ![Access API in Postman](images/ms-api-access-postman-output-v1.png)
 
