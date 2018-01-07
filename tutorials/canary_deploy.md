@@ -5,8 +5,7 @@
 In this tutorial, we will go through the following flow:
 
 * Deploy microservice version V2 with Istio enabled (using Wercker)
-* Access GET "/api/creditscore" (in a Browser or in Postman)
-* See the traffic distribution between versions V1 and V2
+* Access GET "/api/creditscore" (in Browser/Postman) and observe the requests distributed between versions V1 and V2
 * Route 100% traffic to microservice version V2
 * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
@@ -93,7 +92,7 @@ In this tutorial, we will go through the following flow:
 	![Pod Logs](images/ms-w-run-initial-pod-logs.png)
 	
 
-### Access GET "/api/creditscore" (in a Browser or in Postman) and observe the requests distributed between versions V1 and V2
+### Access GET "/api/creditscore" (in Browser/Postman) and observe the requests distributed between versions V1 and V2
 
 1. Access GET /api/creditscore in a browser and you should see the following Welcome message. For now you will notice some requests are served by V1 and others by V2 because we have both versions running side-by-side. In the next step we will route 100% of the traffic to V2
 
