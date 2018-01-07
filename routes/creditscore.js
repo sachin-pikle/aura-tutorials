@@ -1,3 +1,22 @@
+/*
+ * GET list of all scores. Will return a simple Welcome message for now!
+ * Note: In this version we don't persist any scores so there is nothing to return.
+ */
+
+exports.list = function(req, res){
+    console.log("Entering list all scores function V1");
+    console.log(req.body);
+
+    var resultData = {
+        "MESSAGE": "Welcome to aura-js-creditscore version V1"
+    };
+
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(resultData));
+};
+
+
+
 var SCORE_MAX = 800;
 var SCORE_MIN = 550;
 var util = require('util');
@@ -60,22 +79,5 @@ String.prototype.hashCode = function() {
     hash |= 0; // Convert to 32bit integer
   }
   return Math.abs(hash);
-};
-
-/*
- * GET list of all scores. In this version we don't persist any scores so there is nothing to return
- */
-
-exports.list = function(req, res){
-    console.log("Entering list all scores function V1");
-    console.log(req.body);
-
-    var resultData = {
-        "MESSAGE": "Welcome to aura-js-creditscore version V1)"
-    };
-
-
-    res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify(resultData));
 };
 
