@@ -8,11 +8,16 @@ exports.list = function(req, res){
     console.log(req.body);
 
     var resultData = {
-        "MESSAGE": "Welcome to aura-js-creditscore version V1"
+
+// TODO - Please comment the line with the DUMMY message and uncomment the one with the Welcome message
+        "MESSAGE": "DUMMY message V1"
+        //"MESSAGE": "Welcome to aura-js-creditscore version V1"
+
     };
 
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(resultData));
+
 };
 
 
