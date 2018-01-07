@@ -58,38 +58,42 @@ In this tutorial, we will go through the following flow:
 
 3. Deploy the app using wercker CI/CD
 
-	3.1. Go to [V1 > view.ejs]()
+	3.1. Edit [V1 > aura-js-creditscore/routes/creditscore.js](../routes/creditscore.js)
 
-	3.2. Change title - add V1 
+	3.2. Look for `// _CHANGE_ : Please comment the line with the DUMMY message and uncomment the one with the Welcome message` and make the requested change
 
 	3.3. Commit the change
 
-	3.4. Wercker will fire the CI/CD workflow for V1. Check the progress on Wercker Pipelines > Runs.
+	3.4. Wercker will fire a workflow run for V1. Check the progress on Wercker Pipelines > Runs.
 
-	Add screenshot
-
+	![Workflow run](images/ms-w-run-initial-msg-change.png)
+	
 	3.5. Check Releases to confirm the new container image has been uploaded
 
-	Add screenshot
+	![Releases Image Uploaded](images/ms-w-run-initial-cr-image-v1.png)
+	
+	3.6. Check the Kubernetes dashboard to see if the latest version got deployed. Note: When re-deploying it takes ~35 seconds for K8s to terminate the old pods and start the new pod
 
-	3.6. Check the Kubernetes dashboard to see if the latest version got deployed. Takes ~35 seconds for K8s to terminate the old pods and start the new pod
-
-	Add screenshot
-
+	![K8s Dashboard Shows Kubernetes Elements Created](images/ms-w-run-initial-k8s-dashboard.png)
+	
 	3.7. Check the pod logs
 
-	Add screenshot
-
+	![Pod Logs](images/ms-w-run-initial-pod-logs.png)
+	
 
 ### Access GET "/api/creditscore" (in a Browser or in Postman)
 
-1. Access GET /api/creditscore in a browser and see the response
+1. Access GET /api/creditscore in a browser and you should see the following Welcome from V1 message
 
-Add screenshot
+{"MESSAGE":"Welcome to aura-js-creditscore version V1"}
 
-2. (OPTIONAL) Access GET /api/creditscore in Postman and see the response
+![Access API in Browser](images/ms-api-access-browser-output-v1.png)
 
-Add screenshot
+2. (OPTIONAL) Access GET /api/creditscore in Postman and you should see the same Welcome from V1 message
+
+{"MESSAGE":"Welcome to aura-js-creditscore version V1"}
+
+![Access API in Postman](images/ms-api-access-postman-output-v1.png)
 
 
 ### Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
