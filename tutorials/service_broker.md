@@ -31,7 +31,7 @@ In this tutorial, we will go through the following flow:
 
 5. Check the Volume Provisioner logs 
 
-    I0106 17:29:22.224399       1 controller.go:893] scheduleOperation[lock-provision-default/mysql-pvc-01[223367d8-f307-11e7-92b2-0a580aed6036]]
+    `I0106 17:29:22.224399       1 controller.go:893] scheduleOperation[lock-provision-default/mysql-pvc-01[223367d8-f307-11e7-92b2-0a580aed6036]]
     
     I0106 17:29:22.232035       1 controller.go:893] scheduleOperation[lock-provision-default/mysql-pvc-01[223367d8-f307-11e7-92b2-0a580aed6036]]
     
@@ -55,7 +55,7 @@ In this tutorial, we will go through the following flow:
     
     I0106 17:29:22.420531       1 controller.go:680] volume "abuwcljsaawe4p22kmypedlm63iunro5vq4wfmhh3jl4253fd4vpz4n6tlea" provisioned for claim "default/mysql-pvc-01"
     
-    I0106 17:29:24.268605       1 leaderelection.go:196] stopped trying to renew lease to provision for pvc default/mysql-pvc-01, task succeeded
+    I0106 17:29:24.268605       1 leaderelection.go:196] stopped trying to renew lease to provision for pvc default/mysql-pvc-01, task succeeded`
 
 
 5. Go to Admin console > [Service Brokers](http://127.0.0.1:8001/api/v1/namespaces/default/services/aura-admin-service:admin-service/proxy/console/#/serviceBrokers) 
