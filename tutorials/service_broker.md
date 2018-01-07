@@ -4,8 +4,8 @@
 
 In this tutorial, we will go through the following flow:
 
-* Provision a MongoDb instance using Service Broker
-* Write code to connect microservice version V2 to the MongoDB instance
+* Provision a MySQL instance using Service Broker
+* Write code to connect microservice version V2 to the MySQL instance
 * Access GET "/api/creditscore" (in a Browser or in Postman)
 * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
@@ -14,8 +14,8 @@ In this tutorial, we will go through the following flow:
 ### Provision a MySQL instance using Service Broker
 
 1. Provision a PVC / PV / OCI Block Volume
-$ kubectl apply -f mysql-pvc.yaml
 
+$ kubectl apply -f mysql-pvc.yaml  
 persistentvolumeclaim "mysql-pvc-01" created
 
 
@@ -67,13 +67,13 @@ I0106 17:29:24.268605       1 leaderelection.go:196] stopped trying to renew lea
 
 Service Name: mysql-sb-inst-1
 
-Plan: Basic
+Plan: basic
 
 Parameters: 
 
-key: persistence.existingClaim
+Name: persistence.existingClaim
 
-value: mysql-pvc-01  ... This is the name of the pvc we created above
+Value: mysql-pvc-01  ... This is the name of the PVC we created above
 
 ![Create Instance](images/sb-mysql-create.png)
 
