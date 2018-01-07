@@ -85,8 +85,9 @@ In this tutorial, we will go through the following flow:
 	
 	3.6. Check the Kubernetes dashboard to see if the latest version got deployed. Note: When re-deploying it takes ~35 seconds for K8s to terminate the old pods and start the new pod
 
-	![K8s Dashboard Shows Kubernetes Elements Created](images/ms-w-run-initial-k8s-dashboard-v1-v2.png)
-	
+	![K8s Dashboard Shows Kubernetes Elements Created](images/ms-w-run-initial-k8s-dashboard-v1-v2-part-1.png)
+	![K8s Dashboard Shows Kubernetes Elements Created](images/ms-w-run-initial-k8s-dashboard-v1-v2-part-2.png)
+		
 	3.7. Check the pod logs
 
 	![Pod Logs](images/ms-w-run-initial-pod-logs-v2.png)
