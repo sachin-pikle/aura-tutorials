@@ -28,13 +28,21 @@ In this tutorial, we will go through the following flow:
 
 	2.3. Review the [wercker.yml](../wercker.yml) file
 
-	2.4. Set up the pipelines
-
-	Add images of each of the three pipelines
+	2.4. Set up push-to-CR and deploy-to-CE pipelines
+	
+	![push-to-CR Pipeline](images/ms-w-pipeline-push-to-CR.png)
+	
+	![deploy-to-CE Pipeline](images/ms-w-pipeline-deploy-to-CE.png)
+	
+	![All Pipelines](images/ms-w-pipelines.png)
 
 	2.5. Set up the workflow
-
-	Add workflow image
+	
+	![Add push-to-CR pipeline to Workflow](images/ms-w-workflow-add-push-to-CR.png)
+	
+	![Add deploy-to-CE pipeline to Workflow](images/ms-w-workflow-add-deploy-to-CE.png)
+	
+	![All Workflows](images/ms-w-workflows.png)
 
 3. Deploy the app using wercker CI/CD
 
