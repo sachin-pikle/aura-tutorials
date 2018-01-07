@@ -12,11 +12,11 @@ In this tutorial, we will go through the following flow:
 
 ### Deploy microservice version V1 with Istio enabled (using Wercker)
 
-1. Set up the source code repo
+* 1. Set up the source code repo
 
 We will use an existing application for this tutorial.
 
-  1.1. Sign in to [GitHub](https://github.com)
+  * 1.1. Sign in to [GitHub](https://github.com)
 
   1.2. Go to Sachin's GitHub repo [aura-js-creditscore](https://github.com/sachin-pikle/aura-js-creditscore) and fork it. You now have your own working copy of the repo version V1
 
