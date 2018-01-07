@@ -1,32 +1,23 @@
 box: node:6.10
 build:
   steps:
+    # Run 'npm install'
     - script:
         name: A step that executes `npm install` command
         code: npm install  
 
 push-to-releases:
   steps:
-    # Push to public docker repo Container Registry (CR)
+    # Push docker image to your docker container registry repo
     - internal/docker-push:
         repository: wcr.io/$WERCKER_APPLICATION_OWNER_NAME/$WERCKER_APPLICATION_NAME
         tag: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
         cmd: node /pipeline/source/app.js
 
 deploy-to-oke:
-  #box:
-        #id: alpine
-        #cmd: /bin/sh
   steps:
     - bash-template
     
-    - kubectl:
-        name: kubectl version
-        server: $KUBERNETES_MASTER
-        token: $KUBERNETES_TOKEN
-        insecure-skip-tls-verify: true
-        command: version
-
     - script:
       name: Install istioctl
       code: |
@@ -41,6 +32,8 @@ deploy-to-oke:
         echo "Checking istioctl version"
         istioctl version
         
+    # Wercker kubectl step currently doesn't support embedded istioctl commands like manual side car injection
+    # Hence as a *workaround*, in this step we generate and save your kubeconfig for embedded istioctl to work
     - script:
       name: generate and save kubeconfig
       code: |
@@ -70,7 +63,7 @@ deploy-to-oke:
         code: cat kubernetes-deployment.yml
     
     - kubectl:
-        name: delete secret
+        name: delete OCR secret
         server: $KUBERNETES_MASTER
         token: $KUBERNETES_TOKEN
         insecure-skip-tls-verify: true
@@ -83,19 +76,13 @@ deploy-to-oke:
         insecure-skip-tls-verify: true
         command: create secret docker-registry wrelease --docker-server=wcr.io --docker-username=$WERCKER_APPLICATION_OWNER_NAME --docker-password=$KUBERNETES_TOKEN --docker-email=$DOCKER_EMAIL
         
+    # Deploy the app with istio side car injection (manual)
     - kubectl:
         name: create deplyoment
         server: $KUBERNETES_MASTER
         token: $KUBERNETES_TOKEN
         insecure-skip-tls-verify: true
         command: apply -f <(istioctl kube-inject -f kubernetes-deployment.yml)
-
-    - kubectl:
-        name: get LoadBalancer public IP address
-        server: $KUBERNETES_MASTER
-        token: $KUBERNETES_TOKEN
-        insecure-skip-tls-verify: true
-        command: get svc -o jsonpath='{.items[*].status.loadBalancer.ingress[*].ip}' --all-namespaces
 
 functional-test:
   steps:
