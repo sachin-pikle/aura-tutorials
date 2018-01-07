@@ -6,15 +6,15 @@ build:
         name: A step that executes `npm install` command
         code: npm install  
 
-push-to-releases:
+push-image-to-wcr:
   steps:
-    # Push docker image to your docker container registry repo
+    # Push docker image to your docker container registry repo i.e. wercker container releases (wcr or just CR)
     - internal/docker-push:
         repository: wcr.io/$WERCKER_APPLICATION_OWNER_NAME/$WERCKER_APPLICATION_NAME
         tag: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
         cmd: node /pipeline/source/app.js
 
-deploy-to-oke:
+deploy-app-to-oce:
   steps:
     - bash-template
     
@@ -63,14 +63,14 @@ deploy-to-oke:
         code: cat kubernetes-deployment.yml
     
     - kubectl:
-        name: delete OCR secret
+        name: delete wcr secret
         server: $KUBERNETES_MASTER
         token: $KUBERNETES_TOKEN
         insecure-skip-tls-verify: true
         command: delete secret wrelease --ignore-not-found
         
     - kubectl:
-        name: create OCR secret
+        name: create wcr secret
         server: $KUBERNETES_MASTER
         token: $KUBERNETES_TOKEN
         insecure-skip-tls-verify: true
