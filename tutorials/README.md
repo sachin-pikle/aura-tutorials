@@ -54,8 +54,8 @@ In this tutorial, we will go through the following flow:
   * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
 * [Part 3 - Service broker integration](service_broker.md)
-  * Provision a MongoDb instance using Service Broker
-  * Write code to connect microservice version V2 to the MongoDB instance
+  * Provision a MySQL instance using Service Broker
+  * Write code to connect microservice version V2 to the MySQL instance
   * Access GET "/api/creditscore" (in a Browser or in Postman)
   * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
