@@ -128,8 +128,9 @@ In this tutorial, we will go through the following flow:
 
 ![Comment "deploy" step](images/canary-comment-deploy.png)
 
+2. This will trigger a wercker run and add the routing rule. Now we should have 100% of the traffic routed to V2. Check the wercker runs > deploy-to-CE pipeline > "Add traffic route rule with istioctl" step logs to see the route rules set up.
 
-2. This will trigger a wercker run and add the routing rule. Now we should have 100% of the traffic routed to V2
+![Wercker runs > "add" step logs](images/canary-w-run-step-logs.png)
 
 3. Once you successfully add a route rule, comment the "add" step. If you wish to change an existing routing rule, uncomment and use the "replace" step.
 
