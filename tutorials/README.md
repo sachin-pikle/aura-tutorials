@@ -14,15 +14,13 @@ This is a tutorial for microservices training. In this tutorial, we will cover t
 
 ## About the sample application
  
-This is a simple node.js microservice application that takes a bunch of parameters, calculates and returns a credit score. The application has the following interfaces:
+This is a simple node.js microservice application that exposes a REST API.
 
-1. REST API GET "/api/creditscore" - This only returns a hardcoded message for now. We will enhance this API in this tutorial
-2. REST API POST "/api/creditscore" - This takes input parameters (JSON) and returns the generated credit score (JSON)
-3. Front end UI accesible at "/" - This shows a simple form (UI) to capture the input parameters and display the returned credit score
+REST API GET "/api/creditscore" - This only returns a hardcoded message for now. We will enhance this API in this tutorial
 
 Note: In this tutorial, we will develop two versions of this service V1 and V2. 
-* In version V1 we don't save any data
-* In version V2 we use MySQL to save/fetch data
+* Version V1 is standalone app and doesn't use any DB
+* In version V2 we will extend the app to connect to MySQL DB provisioned using Service Brokers 
  
 
 ## Prerequisites
@@ -34,9 +32,9 @@ Note: In this tutorial, we will develop two versions of this service V1 and V2.
 - kubeconfig file of your OKE cluster downloaded on your machine
 - kubectl installed and working on your machine 
 - "kubectl proxy" runs and you can access the K8s dashboard
-- (OPTIONAL) istioctl installed and working on your machine
 - Can view resources in your OCI tenancy (Ashburn region) from the OCI console
 - Sufficient OCI block volume storage. At least 100 GB of block volume available to provision the service broker instance (uses 50 GB)
+- (OPTIONAL) istioctl installed and working on your machine
 
 
 ## Tutorial Flow
