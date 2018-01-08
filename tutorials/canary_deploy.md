@@ -122,9 +122,32 @@ In this tutorial, we will go through the following flow:
 
 ### Route 100% traffic to microservice version V2
 
-1. Run the Istio command to route 100% of the traffic to V2
+1. In this step we will do a canary release and route 100% of the traffic to V2. This is done using the istioctl routes rules feature. Go to the wercker.yml file. Uncomment and use the "add" step to add your first route rule. Also you don't need to redeploy the app so comment out the "deploy" step.
 
-2. Access the api and confirm requests are served by V2 only
+![Uncomment "add" step](images/canary-add-route-rule.png)
+
+![Comment "deploy" step](images/canary-comment-deploy.png)
+
+
+2. This will trigger a wercker run and add the routing rule. Now we should have 100% of the traffic routed to V2
+
+3. Once you successfully add a route rule, comment the "add" step. If you wish to change an existing routing rule, uncomment and use the "replace" step.
+
+4. Access GET /api/creditscore in a browser multiple times and you should see the following Welcome message from V2. Now we have 100% of the traffic routed to V2
+
+`{ "MESSAGE": "Welcome to aura-js-creditscore version V2" }`
+
+![Access API in Browser](images/ms-api-access-browser-output-v2.png)
+
+
+5. (OPTIONAL) Access GET /api/creditscore in Postman multiple times and you should see the same Welcome message from V2. Now we have 100% of the traffic routed to V2
+
+`{  
+    "MESSAGE": "Welcome to aura-js-creditscore version V2"  
+}`
+
+![Access API in Postman](images/ms-api-access-postman-output-v2.png)
+
 
 ### Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
