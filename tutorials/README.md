@@ -55,6 +55,7 @@ In this tutorial, we will go through the following flow:
 
 * [Part 3 - Service broker integration](service_broker.md)
   * Provision a MySQL instance using Service Broker
+  * Connection settings for the MySQL service broker instance
   * Write code to connect microservice version V2 to the MySQL instance
   * Access GET "/api/creditscore" (in a Browser or in Postman)
   * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
