@@ -111,35 +111,78 @@ Add screenshot
 
 ### Access GET "/api/creditscore" (in a Browser or in Postman)
 
-1. Access GET /api/creditscore in a browser and see the response
+1. Access GET /api/creditscore in a browser multiple times and you should see the following Welcome message from V2. Now we have 100% of the traffic routed to V2
 
-Add screenshot
+`{ "MESSAGE": "Welcome to aura-js-creditscore version V2" }`
 
-2. (OPTIONAL) Access GET /api/creditscore in Postman and see the response
+![Access API in Browser](images/ms-api-access-browser-output-v2.png)
 
-Add screenshot
+
+2. (OPTIONAL) Access GET /api/creditscore in Postman multiple times and you should see the same Welcome message from V2. Now we have 100% of the traffic routed to V2
+
+`{  
+    "MESSAGE": "Welcome to aura-js-creditscore version V2"  
+}`
+
+![Access API in Postman](images/ms-api-access-postman-output-v2.png)
 
 
 ### Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
 1. Check the pod logs
 
-Add screenshot
+![Pod Logs](images/ms-pod-logs-v2.png)
 
-2. Access Vizceral console (Limited for now - e.g. MySQL not visible currently, on the roadmap)
+2. Access Vizceral console (Limited visibility for now, more on the roadmap)
 
-Add screenshot
+Known Issue: Screen shows the data flowing for ~1 minute. This view doesn't refresh automatically and must be refreshed manually by reloading the top level console
 
-3. Access Grafana dashboard (Limited for now - e.g. MySQL not visible currently, on the roadmap)
+URL: http://127.0.0.1:8001/api/v1/namespaces/default/services/aura-admin-service:admin-service/proxy/console/#/vizceral
 
-Add screenshot
+**a) Vizceral Console Top Level**
 
-4. Access Zipkin and Find the last 10, sort by Newest first (Limited for now - e.g. MySQL not visible currently, on the roadmap)
+You will see traffic flowing from the internet in to your cluster. Note the service "aura-js-creditscore" pod is deployed in a single AD.
 
-Add screenshot
+![Vizceral Console Level 1](images/ms-vizceral-level-1.png)
 
-5. Explore trace (Limited for now - e.g. MySQL not visible currently, on the roadmap)
+**b) Vizceral Console Next Level Drill Down**
 
-Add screenshot
+Click on the circle next to "My Cluster". And you will see traffic flowing from the internet into your "aura-js-creditscore" service.
 
+![Vizceral Console Level 2](images/ms-vizceral-level-2.png)
 
+**b) Vizceral Console Service Details**
+
+Click on the service circle named "aura-js-creditscore". And you will see additional details about your running aura-js-creditscore service
+
+![Vizceral Console Level 3](images/ms-vizceral-level-3-v2.png)
+
+3. Access Grafana dashboard (Limited visibility for now, more on the roadmap)
+
+URL: http://127.0.0.1:8001/api/v1/namespaces/default/services/aura-admin-service:admin-service/proxy/console/#/grafana
+
+![Grafana Part 1](images/ms-grafana-part-1.png)
+
+![Grafana Part 2](images/ms-grafana-part-2.png)
+
+4. Access Zipkin tracing (Limited visibility for now, more on the roadmap)
+
+URL: http://127.0.0.1:8001/api/v1/namespaces/default/services/aura-admin-service:admin-service/proxy/console/#/zipkin
+
+Find the last 10, sort by Newest first.
+
+**a) Zipkin Tracing Top Level**
+
+![Zipkin Level 1](images/ms-zipkin-level-1.png)
+
+**b) Zipkin Tracing Second Level**
+
+Explore trace by clicking on the first span
+
+![Zipkin Level 2](images/ms-zipkin-level-2-v2.png)
+
+**c) Zipkin Tracing Additional Details**
+
+Get additional trace details by clicking on the first line of the span "aura-js-creditscore"
+
+![Zipkin Level 3](images/ms-zipkin-level-3-v2.png)
