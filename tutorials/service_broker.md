@@ -131,7 +131,7 @@ Add screenshot
 
 1. Check the pod logs
 
-![Pod Logs](images/ms-pod-logs-v2.png)
+![Pod Logs](images/sb-mysql-pod-logs.png)
 
 2. Access Vizceral console (Limited visibility for now, more on the roadmap)
 
