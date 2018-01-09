@@ -71,7 +71,7 @@ In this tutorial, we will go through the following flow:
 
 	3.2. Look for the following line and make the requested changes
 	
-	`// _CHANGE_ : Please comment the line with the DUMMY message and uncomment the one with the Welcome message`
+		// _CHANGE_ : Please comment the line with the DUMMY message and uncomment the one with the Welcome message
 
 	3.3. Commit the change
 
@@ -97,9 +97,9 @@ In this tutorial, we will go through the following flow:
 
 1. Access GET /api/creditscore in a browser and you should see the following Welcome message. For now you will notice some requests are served by V1 and others by V2 because we have both versions running side-by-side. In the next step we will route 100% of the traffic to V2
 
-`{ "MESSAGE": "Welcome to aura-js-creditscore version V2" }`
+		{ "MESSAGE": "Welcome to aura-js-creditscore version V2" }
 
-`{ "MESSAGE": "Welcome to aura-js-creditscore version V1" }`
+		{ "MESSAGE": "Welcome to aura-js-creditscore version V1" }
 
 ![Access API in Browser](images/ms-api-access-browser-output-v2.png)
 
@@ -107,13 +107,13 @@ In this tutorial, we will go through the following flow:
 
 2. (OPTIONAL) Access GET /api/creditscore in Postman and you should see the same Welcome message. For now you will notice some requests are served by V1 and others by V2 because we have both versions running side-by-side. In the next step we will route 100% of the traffic to V2
 
-`{  
-    "MESSAGE": "Welcome to aura-js-creditscore version V2"  
-}`
+		{  
+		    "MESSAGE": "Welcome to aura-js-creditscore version V2"  
+		}
 
-`{  
-    "MESSAGE": "Welcome to aura-js-creditscore version V1"  
-}`
+		{  
+		    "MESSAGE": "Welcome to aura-js-creditscore version V1"  
+		}
 
 ![Access API in Postman](images/ms-api-access-postman-output-v2.png)
 
@@ -138,16 +138,16 @@ In this tutorial, we will go through the following flow:
 
 4. Access GET /api/creditscore in a browser multiple times and you should see the following Welcome message from V2. Now we have 100% of the traffic routed to V2
 
-`{ "MESSAGE": "Welcome to aura-js-creditscore version V2" }`
+		{ "MESSAGE": "Welcome to aura-js-creditscore version V2" }
 
 ![Access API in Browser](images/ms-api-access-browser-output-v2.png)
 
 
 5. (OPTIONAL) Access GET /api/creditscore in Postman multiple times and you should see the same Welcome message from V2. Now we have 100% of the traffic routed to V2
 
-`{  
-    "MESSAGE": "Welcome to aura-js-creditscore version V2"  
-}`
+		{  
+		    "MESSAGE": "Welcome to aura-js-creditscore version V2"  
+		}
 
 ![Access API in Postman](images/ms-api-access-postman-output-v2.png)
 
