@@ -111,20 +111,20 @@ Add screenshot
 
 ### Access GET "/api/creditscore" (in a Browser or in Postman)
 
-1. Access GET /api/creditscore in a browser multiple times and you should see the following Welcome message from V2. Now we have 100% of the traffic routed to V2
+1. Access GET /api/creditscore in a browser multiple times and you should see the following message indicating successful DB communication
 
-`{ "MESSAGE": "Welcome to aura-js-creditscore version V2" }`
+`{ "MESSAGE" : "SUCCESS communicating with DB" }`
 
-![Access API in Browser](images/ms-api-access-browser-output-v2.png)
+![Access API in Browser](images/sb-mysql-api-access-browser-output.png)
 
 
-2. (OPTIONAL) Access GET /api/creditscore in Postman multiple times and you should see the same Welcome message from V2. Now we have 100% of the traffic routed to V2
+2. (OPTIONAL) Access GET /api/creditscore in Postman multiple times and you should see the following message indicating successful DB communication
 
 `{  
-    "MESSAGE": "Welcome to aura-js-creditscore version V2"  
+    "MESSAGE": "SUCCESS communicating with DB"  
 }`
 
-![Access API in Postman](images/ms-api-access-postman-output-v2.png)
+![Access API in Postman](images/sb-mysql-api-access-postman-output.png)
 
 
 ### Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
