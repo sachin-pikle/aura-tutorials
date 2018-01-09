@@ -16,8 +16,8 @@ In this tutorial, we will go through the following flow:
 
 1. Provision a Persistent Volume Claim (PVC) / Persistent Volume (PV) / OCI Block Volume using V2 > aura-js-creditscore-v2/mysql-pvc.yaml file 
 
-    $ kubectl apply -f mysql-pvc.yaml  
-    persistentvolumeclaim "mysql-pvc-01" created
+		$ kubectl apply -f mysql-pvc.yaml  
+		persistentvolumeclaim "mysql-pvc-01" created
 
 
 2. Check the PVC from the Kubernetes Dashboard
@@ -49,15 +49,15 @@ URL: http://127.0.0.1:8001/api/v1/namespaces/default/services/aura-admin-service
 
 8. Create New Instance of the MySQL service broker with the following values
 
-Instance Name: mysql-sb-inst-1
+	Instance Name: mysql-sb-inst-1
 
-Plan: basic
+	Plan: basic
 
-Parameters: 
+	Parameters: 
 
-Name: persistence.existingClaim
+		Name: persistence.existingClaim
 
-Value: mysql-pvc-01  ... This is the name of the PVC we created above
+		Value: mysql-pvc-01  ... This is the name of the PVC we created above
 
 ![Create Instance](images/sb-mysql-create.png)
 
@@ -95,7 +95,7 @@ Value: mysql-pvc-01  ... This is the name of the PVC we created above
 
 3. Look for the following line and make the requested changes 
 
-'# _CHANGE_Part_3_Service_Broker_Integration_ : Uncomment the following env block to test service broker integration'
+		# _CHANGE_Part_3_Service_Broker_Integration_ : Uncomment the following env block to test service broker integration
 
 ![Kubernetes yaml env block](images/sb-mysql-k8s-yml-env-block.png)
 
@@ -107,9 +107,9 @@ Value: mysql-pvc-01  ... This is the name of the PVC we created above
 
 2. Look for the following lines and make the requested changes
 
-'// _CHANGE_Part_3_Service_Broker_Integration_ :'  
-'// 1) Comment the two methods res.setHeader() and res.send()'  
-'// 2) Uncomment the entire db code block below to use DB'  
+		// _CHANGE_Part_3_Service_Broker_Integration_ :
+		// 1) Comment the two methods res.setHeader() and res.send()
+		// 2) Uncomment the entire db code block below to use DB
 
 ![Code changes to connect to mysql](images/sb-mysql-code-changes-1.png)
 ![Code changes to connect to mysql](images/sb-mysql-code-changes-2.png)
@@ -138,16 +138,16 @@ Value: mysql-pvc-01  ... This is the name of the PVC we created above
 
 1. Access GET /api/creditscore in a browser and you should see the following message indicating successful DB communication
 
-`{ "MESSAGE" : "SUCCESS communicating with DB" }`
+		{ "MESSAGE" : "SUCCESS communicating with DB" }
 
 ![Access API in Browser](images/sb-mysql-api-access-browser-output.png)
 
 
 2. (OPTIONAL) Access GET /api/creditscore in Postman and you should see the following message indicating successful DB communication
 
-`{  
-    "MESSAGE": "SUCCESS communicating with DB"  
-}`
+		{  
+			"MESSAGE": "SUCCESS communicating with DB"  
+		}
 
 ![Access API in Postman](images/sb-mysql-api-access-postman-output.png)
 
