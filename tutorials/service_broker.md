@@ -147,11 +147,13 @@ You will see traffic flowing from the internet in to your cluster. Note the serv
 
 **b) Vizceral Console Next Level Drill Down**
 
-Click on the circle next to "My Cluster". And you will see traffic flowing from the internet into your "aura-js-creditscore" service.
+Click on the circle next to "My Cluster". And you will see traffic flowing from the internet into your "aura-js-creditscore" service. Note: MySQL is not be visible (see known limitations) today.
+
+Known Limitations: a) Vizceral needs to support gRPC, TCP metrics, right now it only support HTTP traffic. b) Currently, we do not inject istio sidecar into service broker instances (i.e. MySQL).
 
 ![Vizceral Console Level 2](images/ms-vizceral-level-2.png)
 
-**b) Vizceral Console Service Details**
+**c) Vizceral Console Service Details**
 
 Click on the service circle named "aura-js-creditscore". And you will see additional details about your running aura-js-creditscore service
 
@@ -177,7 +179,9 @@ Find the last 10, sort by Newest first.
 
 **b) Zipkin Tracing Second Level**
 
-Explore trace by clicking on the first span
+Explore trace by clicking on the first span. Note: MySQL is not be visible (see known limitations) today.
+
+Known Limitations: a) Currently, we do not inject istio sidecar into service broker instances (i.e. MySQL) so we do not get automatic tracing/metrics collection
 
 ![Zipkin Level 2](images/ms-zipkin-level-2-v2.png)
 
