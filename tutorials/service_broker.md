@@ -5,6 +5,7 @@
 In this tutorial, we will go through the following flow:
 
 * Provision a MySQL instance using Service Broker
+* Connection settings for the MySQL service broker instance
 * Write code to connect microservice version V2 to the MySQL instance
 * Access GET "/api/creditscore" (in a Browser or in Postman)
 * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
@@ -84,13 +85,13 @@ Value: mysql-pvc-01  ... This is the name of the PVC we created above
 
 
 
-### Connection settings for the MySQL instance
+### Connection settings for the MySQL service broker instance
 
 1. Service broker instance connection settings are automatically available as Kubernetes secrets. The secret name convention is secret-<sb-instance-name>. In this case the secret is secret-mysql-sb-inst-1. 
 
 ![Kubernetes mysql service broker secret](images/sb-mysql-secret.png)
 
-2. Edit V2 > aura-js-creditscore-v2/kubernetes-deployment.yml.template
+2. Now that we have the connection details in the secret, configure the application deployment section of the kubernetes yaml to access this secret via an env block. Edit V2 > aura-js-creditscore-v2/kubernetes-deployment.yml.template
 
 3. Look for the following line and make the requested changes 
 
