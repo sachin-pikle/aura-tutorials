@@ -13,7 +13,7 @@ In this tutorial, we will go through the following flow:
 
 ### Provision a MySQL instance using Service Broker
 
-1. Provision a Persistent Volume Claim (PVC) / Persistent Volume (PV) / OCI Block Volume using aura-js-creditscore-v2 > mysql-pvc.yaml. 
+1. Provision a Persistent Volume Claim (PVC) / Persistent Volume (PV) / OCI Block Volume using V2 > aura-js-creditscore-v2/mysql-pvc.yaml file 
 
     $ kubectl apply -f mysql-pvc.yaml  
     persistentvolumeclaim "mysql-pvc-01" created
@@ -84,9 +84,25 @@ Value: mysql-pvc-01  ... This is the name of the PVC we created above
 
 
 
+### Connection settings for the MySQL instance
+
+1. Service broker instance connection settings are automatically available as Kubernetes secrets. The secret name convention is secret-<sb-instance-name>. In this case the secret is secret-mysql-sb-inst-1. 
+
+![Kubernetes mysql service broker secret](images/sb-mysql-secret.png)
+
+2. Edit V2 > aura-js-creditscore-v2/kubernetes-deployment.yml.template
+
+3. Look for the following line and make the requested changes 
+
+'# _CHANGE_Part_3_Service_Broker_Integration_ : Uncomment the following env block to test service broker integration'
+
+![Kubernetes yaml env block](images/sb-mysql-k8s-yml-env-block.png)
+
+
+
 ### Write code to connect microservice version V2 to the MySQL instance
 
-1. Go to [V2 > creditscore.js]()
+1. Edit V2 > aura-js-creditscore-v2/routes/creditscore.js
 
 2. Uncomment code to connect to MYSQL
 
