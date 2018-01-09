@@ -105,25 +105,33 @@ Value: mysql-pvc-01  ... This is the name of the PVC we created above
 
 1. Edit V2 > aura-js-creditscore-v2/routes/creditscore.js
 
-2. Uncomment code to connect to MYSQL
+2. Look for the following lines and make the requested changes
+
+'// _CHANGE_Part_3_Service_Broker_Integration_ :'  
+'// 1) Comment the two methods res.setHeader() and res.send()'  
+'// 2) Uncomment the entire db code block below to use DB'  
+
+![Code changes to connect to mysql](images/sb-mysql-code-changes-1.png)
+![Code changes to connect to mysql](images/sb-mysql-code-changes-2.png)
 
 3. Commit the change
 
 4. Wercker will fire the CI/CD workflow for V2. Check the progress on Wercker Pipelines > Runs.
 
-Add screenshot
+![Workflow run](images/sb-mysql-w-run.png)
 
 5. Check Releases to confirm the new container image has been uploaded
 
-Add screenshot
+![Releases Image Uploaded](images/ms-w-run-initial-cr-image-v2.png)
 
 6. Check the Kubernetes dashboard to see if the latest version got deployed. Takes ~35 seconds for K8s to terminate the old pods and start the new pod
 
-Add screenshot
+![K8s Dashboard Shows Kubernetes Elements Created](images/ms-w-run-initial-k8s-dashboard-v1-v2-part-1.png)
+![K8s Dashboard Shows Kubernetes Elements Created](images/ms-w-run-initial-k8s-dashboard-v1-v2-part-2.png)
 
 7. Check the pod logs
 
-Add screenshot
+![Pod Logs](images/ms-w-run-initial-pod-logs-v2.png)
 
 
 ### Access GET "/api/creditscore" (in a Browser or in Postman)
