@@ -111,14 +111,14 @@ Add screenshot
 
 ### Access GET "/api/creditscore" (in a Browser or in Postman)
 
-1. Access GET /api/creditscore in a browser multiple times and you should see the following message indicating successful DB communication
+1. Access GET /api/creditscore in a browser and you should see the following message indicating successful DB communication
 
 `{ "MESSAGE" : "SUCCESS communicating with DB" }`
 
 ![Access API in Browser](images/sb-mysql-api-access-browser-output.png)
 
 
-2. (OPTIONAL) Access GET /api/creditscore in Postman multiple times and you should see the following message indicating successful DB communication
+2. (OPTIONAL) Access GET /api/creditscore in Postman and you should see the following message indicating successful DB communication
 
 `{  
     "MESSAGE": "SUCCESS communicating with DB"  
