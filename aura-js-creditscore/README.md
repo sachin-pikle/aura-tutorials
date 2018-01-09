@@ -61,8 +61,8 @@ In this tutorial, we will go through the following flow:
   * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
 * [Part 4 - API-first development exprience](api_first.md)
-  * Associate API descriptor with the microservice (from the Admin console)
-  * Generate Javascript lib (from the Admin console)
+  * TBD - Associate API descriptor with the microservice (from the Admin console)
+  * TBD - Generate Javascript lib (from the Admin console)
   * TBD - Create a new client microservice to use the generated JS library to access the backend rest API
   * TBD - Deploy this new client microservice with Istio enabled (using Wercker)
   * TBD - Access the new client microservice
@@ -71,45 +71,11 @@ In this tutorial, we will go through the following flow:
 
 ## Cleanup 
 
-### Remove the aura-js-creditscore application from your K8s cluster
+* MySQL Service Broker
 
-$ kubectl delete ing aura-js-creditscore  
-ingress "aura-js-creditscore" deleted
+  * Go to Admin console > Service Brokers
+  URL: http://127.0.0.1:8001/api/v1/namespaces/default/services/aura-admin-service:admin-service/proxy/console/#/serviceBrokers
 
-$ kubectl delete deployment aura-js-creditscore-v1  
-deployment "aura-js-creditscore-v1" deleted
+  * Delete the service broker mysql-sb-inst-1
 
-$ kubectl delete service aura-js-creditscore  
-service "aura-js-creditscore" deleted
-
-### Remove the mongodb service broker manually (in case you delete aura before removing the services broker instance)
-
-$ kubectl delete deployment mongodb-sb-inst-1-mongodb  
-deployment "mongodb-sb-inst-1-mongodb" deleted
-
-$ kubectl delete service mongodb-sb-inst-1-mongodb  
-service "mongodb-sb-inst-1-mongodb" deleted
-
-$ kubectl delete secret mongodb-sb-inst-1-mongodb secret-mongodb-sb-inst-1  
-secret "mongodb-sb-inst-1-mongodb" deleted
-secret "secret-mongodb-sb-inst-1" deleted  
-
-
-### Delete PVC / PV / OCI BV
-
-$ kubectl delete -f ../oke-pvc.yaml  
-persistentvolumeclaim "mysql-pvc-01" deleted
-
-
-### Alternate way to provision PVC / PV / OCI BV
-Go to the <aura-installer-dir> and execute the following command  
-$ ./bin/volumectl.sh --name mysql-pvc-01 --type pvc --oci-ad US-ASHBURN-AD-1 --create  
-Creating PersistentVolumeClaim mysql-pvc-01 in OKE cluster ...
-
-### Alternate way to delete PVC / PV / OCI BV
-Go to the <aura-installer-dir> and execute the following command  
-$ ./bin/volumectl.sh -n mysql-pvc-01 -t pvc -d  
-Deleting PersistenceVolumeClaim mysql-pvc-01 in OKE cluster ...
-
-Note:
-The storage value in PVC yaml file should be between 50 GB and 16384 GB. Min. block storage = 50Gi
+* Run [cleanup.sh](https://github.com/sachin-pikle/aura-js-creditscore-v2/blob/master/cleanup.sh)
