@@ -20,27 +20,33 @@ In this tutorial, we will go through the following flow:
 
 
 2. Check the PVC from the Kubernetes Dashboard
+
 ![Persistent Volume Claim](images/sb-mysql-pvc.png)
 
 3. Check the PV from the Kubernetes Dashboard
+
 ![Persistent Volume](images/sb-mysql-pv.png)
 
 4. Check the Block Volume from the OCI console
+
 ![Block Volume](images/sb-mysql-oci-block-volumes.png)
 
 5. Check the Volume Provisioner logs 
+
 ![Volume Provisioner Logs](images/sb-mysql-volume-provisioner-logs.png)
 
 
-6. Go to Admin console > [Service Brokers](http://127.0.0.1:8001/api/v1/namespaces/default/services/aura-admin-service:admin-service/proxy/console/#/serviceBrokers) 
+6. Go to Admin console > Service Brokers
+
+URL: http://127.0.0.1:8001/api/v1/namespaces/default/services/aura-admin-service:admin-service/proxy/console/#/serviceBrokers 
 
 ![Service Brokers](images/sb-list-pre.png)
 
 
-6. Select MySQL
+7. Select MySQL (thirdparty-mysql-service)
 
 
-7. Create a new MySQL SB Instance with the following values
+8. Create New Instance of the MySQL service broker with the following values
 
 Instance Name: mysql-sb-inst-1
 
@@ -55,26 +61,26 @@ Value: mysql-pvc-01  ... This is the name of the PVC we created above
 ![Create Instance](images/sb-mysql-create.png)
 
 
-8. MySQL SB instance created 
+9. MySQL service broker instance created 
 
 ![Instance Created](images/sb-mysql-created.png)
 
 
-9. Service Brokers home
+10. Service Brokers home page
 
 ![Service Brokers](images/sb-list-post.png)
 
 
-10. Search "sb-inst" from the K8s dashboard
+11. Search "sb-inst" from the K8s dashboard
 
 ![MySQL Service Broker K8s Elements](images/sb-mysql-sb-inst-01-k8s-dashboard-1.png)
 
 ![MySQL Service Broker K8s Elements](images/sb-mysql-sb-inst-01-k8s-dashboard-2.png)
 
-11. OCI Dashboard you will see the block volume attached to an OCI instance
+
+12. OCI Dashboard you will see the block volume attached to an OCI instance
 
 ![Block Volume](images/sb-mysql-oci-block-volumes-attached.png)
-
 
 
 
