@@ -71,11 +71,6 @@ In this tutorial, we will go through the following flow:
 
 ## Cleanup 
 
-* MySQL Service Broker
-
-  * Go to Admin console > Service Brokers
-  URL: http://127.0.0.1:8001/api/v1/namespaces/default/services/aura-admin-service:admin-service/proxy/console/#/serviceBrokers
-
-  * Delete the service broker mysql-sb-inst-1
+* MySQL Service Broker: Go to [Admin console > Service Brokers](http://127.0.0.1:8001/api/v1/namespaces/default/services/aura-admin-service:admin-service/proxy/console/#/serviceBrokers) > thirdparty-mysql-broker > Delete "mysql-sb-inst-1" service instance
 
 * Run [cleanup.sh](https://github.com/sachin-pikle/aura-js-creditscore-v2/blob/master/cleanup.sh)
