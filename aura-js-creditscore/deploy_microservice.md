@@ -26,7 +26,7 @@ In this tutorial, we will go through the following flow:
 
 	2.2. Add application
 
-	2.3. Review the [wercker.yml](../wercker.yml) file. Note the following differences as we use Istio side cars alongside our microservice
+	2.3. Review the aura-js-creditscore/wercker.yml file. Note the following differences as we use Istio side cars alongside our microservice
 	
 	**a) kubectl step with embedded istioctl command for istio side car injection (manual)**
 	
@@ -66,7 +66,7 @@ In this tutorial, we will go through the following flow:
 
 3. Deploy the app using wercker CI/CD
 
-	3.1. Edit [V1 > aura-js-creditscore/routes/creditscore.js](../routes/creditscore.js)
+	3.1. Edit V1 > aura-js-creditscore/routes/creditscore.js
 
 	3.2. Look for the following line and make the requested changes
 	
