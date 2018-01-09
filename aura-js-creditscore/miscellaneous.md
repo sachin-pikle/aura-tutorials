@@ -1,4 +1,4 @@
-# This is just a parking lot for things.
+# This is just a parking lot for things
 
 ## To remove the aura-js-creditscore application from your K8s cluster
 
