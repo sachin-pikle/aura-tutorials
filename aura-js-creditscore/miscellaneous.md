@@ -29,6 +29,9 @@ secret "secret-mongodb-sb-inst-1" deleted
 $ kubectl delete -f mysql-pvc.yaml  
 persistentvolumeclaim "mysql-pvc-01" deleted
 
+$ kubectl delete -f mongo-pvc.yaml  
+persistentvolumeclaim "mongo-pvc-01" deleted
+
 
 ## Alternate way to provision PVC / PV / OCI BV
 Go to the <aura-installer-dir> and execute the following command  
