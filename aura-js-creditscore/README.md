@@ -77,6 +77,6 @@ In this tutorial, we will go through the following flow:
 
 	curl -LSs https://raw.githubusercontent.com/sachin-pikle/aura-js-creditscore-v2/master/cleanup.sh | sh
 
-	Ignore the following errors 
+	Ignore the following errors  
 	"./cleanup.sh: line 5: oms: command not found"  
 	"./cleanup.sh: line 11: istioctl: command not found"
