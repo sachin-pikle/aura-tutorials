@@ -73,8 +73,10 @@ In this tutorial, we will go through the following flow:
 
 * MySQL Service Broker: Go to [Admin console > Service Brokers](http://127.0.0.1:8001/api/v1/namespaces/default/services/aura-admin-service:admin-service/proxy/console/#/serviceBrokers) > thirdparty-mysql-service > Delete "mysql-sb-inst-1" service instance
 
-* Run [cleanup.sh](https://github.com/sachin-pikle/aura-js-creditscore-v2/blob/master/cleanup.sh). 
+* Clean up the entire lab
 
-Ignore errors 
-"./cleanup.sh: line 5: oms: command not found" and 
-"./cleanup.sh: line 11: istioctl: command not found"
+	curl -LSs https://raw.githubusercontent.com/sachin-pikle/aura-js-creditscore-v2/master/cleanup.sh | sh
+
+	Ignore the following errors 
+	"./cleanup.sh: line 5: oms: command not found"  
+	"./cleanup.sh: line 11: istioctl: command not found"
