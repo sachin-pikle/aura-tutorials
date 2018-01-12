@@ -9,6 +9,9 @@ In this tutorial, we will go through the following flow:
 * Route 100% traffic to microservice version V2
 * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
+![End state](images/Part-2-a.png)
+![End state](images/Part-2-b.png)
+
 ## Steps
 
 ### Deploy microservice version V2 with Istio enabled (using Wercker)
