@@ -10,6 +10,7 @@ In this tutorial, we will go through the following flow:
 * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
 ![End state](images/Part-2-a.png)
+
 ![End state](images/Part-2-b.png)
 
 ## Steps
