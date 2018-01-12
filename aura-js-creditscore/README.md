@@ -22,6 +22,7 @@ In this tutorial, we will develop two versions of this service V1 and V2:
 * Version V1 is standalone app and doesn't use any DB
 * In version V2 we will extend the app to connect to MySQL DB provisioned using Service Brokers 
 
+* End State: *
 ![End state](images/Part-4-b.png)
 
 
@@ -45,28 +46,34 @@ In this tutorial, we will go through the following flow:
 
 * [Part 1 - Deploy your first microservice](deploy_microservice.md)
   * Deploy microservice version V1 with Istio enabled (using Wercker)
+	![Part 1](images/Part-1.png)
   * Access GET "/api/creditscore" (in a Browser or in Postman)
   * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
 * [Part 2 - Canary deployment](canary_deploy.md)
   * Deploy microservice version V2 with Istio enabled (using Wercker)
+	![Part 2a](images/Part-2-a.png)
   * Access GET "/api/creditscore" (in a Browser or in Postman)
   * See the traffic distribution between versions V1 and V2
   * Route 100% traffic to microservice version V2
+	![Part 2b](images/Part-2-b.png)
   * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
 * [Part 3 - Service broker integration](service_broker.md)
   * Provision a MySQL instance using Service Broker
   * Connection settings for the MySQL service broker instance
   * Write code to connect microservice version V2 to the MySQL instance
+	![Part 3](images/Part-3-a.png)
   * Access GET "/api/creditscore" (in a Browser or in Postman)
   * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
 * [Part 4 - API-first development exprience](api_first.md)
   * TBD - Associate API descriptor with the microservice (from the Admin console)
   * TBD - Generate Javascript lib (from the Admin console)
+	![Part 4a](images/Part-4-a.png)
   * TBD - Create a new client microservice to use the generated JS library to access the backend rest API
   * TBD - Deploy this new client microservice with Istio enabled (using Wercker)
+	![Part 4b](images/Part-4-b.png)
   * TBD - Access the new client microservice
   * TBD - Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
