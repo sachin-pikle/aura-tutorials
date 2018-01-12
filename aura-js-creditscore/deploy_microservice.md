@@ -8,6 +8,8 @@ In this tutorial, we will go through the following flow:
 * Access GET "/api/creditscore" (in a Browser or in Postman)
 * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
+![End state](images/Part-1.png)
+
 ## Steps
 
 ### Deploy microservice version V1 with Istio enabled (using Wercker)
