@@ -6,12 +6,10 @@ In this tutorial, we will go through the following flow:
 
 * Deploy microservice version V2 with Istio enabled (using Wercker)
 * Access GET "/api/creditscore" (in Browser/Postman) and observe the requests distributed between versions V1 and V2
+	![End state](images/Part-2-a.png)
 * Route 100% traffic to microservice version V2
+	![End state](images/Part-2-b.png)
 * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
-
-![End state](images/Part-2-a.png)
-
-![End state](images/Part-2-b.png)
 
 ## Steps
 
