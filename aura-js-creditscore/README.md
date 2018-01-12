@@ -22,7 +22,7 @@ In this tutorial, we will develop two versions of this service V1 and V2:
 * Version V1 is standalone app and doesn't use any DB
 * In version V2 we will extend the app to connect to MySQL DB provisioned using Service Brokers 
 
-**End State: **
+**End State:**
 ![End state](images/Part-4-b.png)
 
 
