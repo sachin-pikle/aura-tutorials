@@ -23,6 +23,7 @@ In this tutorial, we will develop two versions of this service V1 and V2:
 * In version V2 we will extend the app to connect to MySQL DB provisioned using Service Brokers 
 
 **End State:**
+
 ![End state](images/Part-4-b.png)
 
 
@@ -63,7 +64,7 @@ In this tutorial, we will go through the following flow:
   * Provision a MySQL instance using Service Broker
   * Connection settings for the MySQL service broker instance
   * Write code to connect microservice version V2 to the MySQL instance
-	![Part 3](images/Part-3-a.png)
+	![Part 3](images/Part-3.png)
   * Access GET "/api/creditscore" (in a Browser or in Postman)
   * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
