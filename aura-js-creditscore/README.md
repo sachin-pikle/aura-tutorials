@@ -18,10 +18,12 @@ This is a simple node.js microservice application that exposes a REST API.
 
 REST API GET "/api/creditscore" - This only returns a hardcoded message for now. We will enhance this API in this tutorial
 
-Note: In this tutorial, we will develop two versions of this service V1 and V2. 
+In this tutorial, we will develop two versions of this service V1 and V2: 
 * Version V1 is standalone app and doesn't use any DB
 * In version V2 we will extend the app to connect to MySQL DB provisioned using Service Brokers 
- 
+
+![End state](images/Part-4-b.png)
+
 
 ## Prerequisites
 
