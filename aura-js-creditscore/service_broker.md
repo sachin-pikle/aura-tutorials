@@ -17,7 +17,7 @@ In this tutorial, we will go through the following flow:
 
 1. Provision a Persistent Volume Claim (PVC) / Persistent Volume (PV) / OCI Block Volume using V2 > aura-js-creditscore-v2/mysql-pvc.yaml file 
 
-		$ kubectl apply -f mysql-pvc.yaml  
+		$ kubectl apply -f https://raw.githubusercontent.com/sachin-pikle/aura-js-creditscore-v2/master/mysql-pvc.yaml  
 		persistentvolumeclaim "mysql-pvc-01" created
 
 
