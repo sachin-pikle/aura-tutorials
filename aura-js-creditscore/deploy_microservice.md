@@ -26,7 +26,7 @@ In this tutorial, we will go through the following flow:
 	2.1. Sign in to [Wercker](https://app.wercker.com)
 
 	2.2. Add application
-
+	
 	2.3. Review the aura-js-creditscore/wercker.yml file. Note the following differences as we use Istio side cars alongside our microservice
 	
 	**a) kubectl step with embedded istioctl command for istio side car injection (manual)**
@@ -44,6 +44,9 @@ In this tutorial, we will go through the following flow:
 	![push-to-CR Pipeline](images/ms-w-pipeline-push-to-CR.png)
 	
 	**b) Pipeline: Create deploy-to-CE pipeline with environment variables**
+	
+	Get Kubernetes Master from your OKE Cluster details page.
+	Get Token from Wercker > Settings > Personal Tokens 
 	
 	![deploy-to-CE Pipeline](images/ms-w-pipeline-deploy-to-CE.png)
 	
