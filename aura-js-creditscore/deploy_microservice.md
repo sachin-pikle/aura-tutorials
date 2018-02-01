@@ -19,7 +19,7 @@ In this tutorial, we will go through the following flow:
 
 	1.1. Sign in to [GitHub](https://github.com)
 
-	1.2. Go to Sachin's GitHub repo [aura-js-creditscore](https://github.com/sachin-pikle/aura-js-creditscore) and fork it. You now have your own working copy of the repo version V1
+	1.2. Go to Sachin's GitHub repo [aura-js-creditscore-v1](https://github.com/sachin-pikle/aura-js-creditscore-v1) and fork it. You now have your own working copy of the repo version V1
 
 2. Set up the Wercker CI/CD
 
