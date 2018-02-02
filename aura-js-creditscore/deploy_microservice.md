@@ -37,17 +37,17 @@ In this tutorial, we will go through the following flow:
 	
 	![wercker.yml inject istio side car](images/ms-w-yml-istio-workaround.png)
 
-	2.4. Set up push-to-CR and deploy-to-CE pipelines
+	2.4. Set up "push-to-CR" and "deploy-to-CE" pipelines
 	
-	**a) Pipeline: Create push-to-CR pipeline**
+	**a) Pipeline: Create "push-to-CR" pipeline**
 	
-	Get Yaml Pipeline name from wercker.yml file.
+	Get YML Pipeline name from wercker.yml file.
 	
 	![push-to-CR Pipeline](images/ms-w-pipeline-push-to-CR.png)
 	
-	**b) Pipeline: Create deploy-to-CE pipeline with environment variables**
+	**b) Pipeline: Create "deploy-to-CE" pipeline with environment variables**
 	
-	Get Yaml Pipeline name from wercker.yml file.
+	Get YML Pipeline name from wercker.yml file.
 	
 	Get Kubernetes Master from your OKE Cluster details page.
 	
