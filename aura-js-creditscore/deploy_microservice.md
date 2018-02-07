@@ -5,7 +5,7 @@
 In this tutorial, we will go through the following flow:
 
 * Deploy microservice version V1 with Istio enabled (using Wercker)
-	![Part 1](images/Part-1.png)
+  ![Part 1](images/Part-1.png)
 * Access GET "/api/creditscore" (in a Browser or in Postman)
 * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
@@ -14,118 +14,141 @@ In this tutorial, we will go through the following flow:
 ### Deploy microservice version V1 with Istio enabled (using Wercker)
 
 1. Set up the source code repo
-	
-	We will use an existing application for this tutorial.
 
-	1.1. Sign in to [GitHub](https://github.com)
+    We will use an existing application for this tutorial.
 
-	1.2. Go to Sachin's GitHub repo [aura-js-creditscore-v1](https://github.com/sachin-pikle/aura-js-creditscore-v1) and fork it. You now have your own working copy of the repo version V1
+    1.1. Sign in to [GitHub](https://github.com)
+
+    1.2. Go to Sachin's GitHub repo [aura-js-creditscore-v1](https://github.com/sachin-pikle/aura-js-creditscore-v1) and fork it. You now have your own working copy of the repo version V1
 
 2. Set up the Wercker CI/CD
 
-	2.1. Sign in to [Wercker](https://app.wercker.com)
+    2.1. Sign in to [Wercker](https://app.wercker.com)
 
-	2.2. Add application
-	
-	2.3. Review the aura-js-creditscore/wercker.yml file. Note the following differences as we use Istio side cars alongside our microservice
-	
-	**a) kubectl step with embedded istioctl command for istio side car injection (manual)**
-	
-	![wercker.yml inject istio side car](images/ms-w-yml-istio-sidecar-inject.png)
-	
-	**b) workaround since wercker doesn't support embedded istioctl commands**
-	
-	![wercker.yml inject istio side car](images/ms-w-yml-istio-workaround.png)
+    2.2. Click the **Create your first application** button in the header of the page
 
-	2.4. Set up "push-to-CR" and "deploy-to-CE" pipelines
-	
-	**a) Pipeline: Create "push-to-CR" pipeline**
-	
-	Get YML Pipeline name from wercker.yml file.
-	
-	![push-to-CR Pipeline](images/ms-w-pipeline-push-to-CR.png)
-	
-	**b) Pipeline: Create "deploy-to-CE" pipeline with environment variables**
-	
-	Get YML Pipeline name from wercker.yml file.
-	
-	Get Kubernetes Master from your OKE Cluster details page.
-	
-	Get Token from Wercker > Settings > Personal Tokens.
-	
-	![deploy-to-CE Pipeline](images/ms-w-pipeline-deploy-to-CE.png)
-	
-	**c) List of all your pipelines:**
-	
-	![All Pipelines](images/ms-w-pipelines.png)
+    2.3. Pick **GitHub** as your SCM and click **Next**.
 
-	2.5. Set up the workflow
-	
-	**a) Workflow: Add push-to-CR pipeline**
-	
-	![Add push-to-CR pipeline to Workflow](images/ms-w-workflow-add-push-to-CR.png)
-	
-	**b) Workflow: Add deploy-to-CE pipeline**
-	
-	![Add deploy-to-CE pipeline to Workflow](images/ms-w-workflow-add-deploy-to-CE.png)
-	
-	**c) List of all your workflows:**
-	
-	![All Workflows](images/ms-w-workflows.png)
+    2.4. From the list of repositories, pick the one you forked in step 1.2 and click **Next**.
+
+    2.5. On the **Configure Access** page, go with the recommended option and click **Next**.
+
+    2.6. Review the options you selected and click **Create** to create the app.
+
+    2.7. In your fork repo, review the aura-js-creditscore/wercker.yml file. Note the following differences as we use Istio side cars alongside our microservice
+
+    **a) kubectl step with embedded istioctl command for istio side car injection (manual)**
+
+    ![wercker.yml inject istio side car](images/ms-w-yml-istio-sidecar-inject.png)
+
+    **b) workaround since wercker doesn't support embedded istioctl commands**
+
+    ![wercker.yml inject istio side car](images/ms-w-yml-istio-workaround.png)
+
+    ### Set up pipelines ("push-to-CR" and "deploy-to-CE")
+
+    #### Set up pipeline for pushing to container registry ("push-to-CR")
+
+    1.1. Go to the application you created and click on the **Workflows** tab.
+
+    1.2. Click **Add new pipeline** button
+
+    1.3. Name the pipeline **push-to-CR** and use **push-image-to-wcr** for YML pipeline name (note that this is defined in the wercker.yml file in your forked repo)
+
+    1.4. Click **Create** to create the pipeline and you should end up with something similar as in the image below:
+
+    ![push-to-CR Pipeline](images/ms-w-pipeline-push-to-CR.png)
+
+    #### Set up pipeline for pushing to container engine ("deploy-to-CE")
+
+    1.1. Go to the application you created and click on the **Workflows** tab.
+
+    1.2. Click **Add new pipeline** button
+
+    1.3. Name the pipeline **deploy-to-CE** and use **deploy-app-to-oce** for YML pipeline name.
+
+    1.4. Click **Create** to create the pipeline.
+
+    1.5. Add pipeline environment variables for the following:
+
+        KUBERNETES_MASTER -- get this URL from your OKE Cluster details page.
+        KUBERNETES_TOKEN -- click your profile in top right -> Settings -> Personal Tokens and generate one
+        KUBERNETES_CLUSTER_ID -- use your OKE Cluster's ID (for eaxmple, you can use the first part from the Kubernetes Master URL)
+        DOCKER_EMAIL -- your email address
+
+    1.6. Your pipeline should look similar to the image below:
+
+    ![deploy-to-CE Pipeline](images/ms-w-pipeline-deploy-to-CE.png)
+
+    1.7. Click the **Workflows** tab again to list all your pipelines:
+
+    ![All Pipelines](images/ms-w-pipelines.png)
+
+    ### Set up the workflow
+
+    1.1. Click the (+) sign next to the build, pick the **push-to-CR** pipeline and click **Add**:
+
+    ![Add push-to-CR pipeline to Workflow](images/ms-w-workflow-add-push-to-CR.png)
+
+    1.2. Click the (+) sign next to the push-to-CR item and select **deploy-to-CE** pipeline and click \*Add\*\*:
+
+    ![Add deploy-to-CE pipeline to Workflow](images/ms-w-workflow-add-deploy-to-CE.png)
+
+    1.3. Your pipeline should look like this:
+
+    ![All Workflows](images/ms-w-workflows.png)
 
 3. Deploy the app using wercker CI/CD
 
-	3.1. Edit V1 > aura-js-creditscore/routes/creditscore.js
+    3.1. In your forked repo, open `aura-js-creditscore/routes/creditscore.js`
 
-	3.2. Look for the following line and make the requested changes
-	
-		// _CHANGE_ : Please comment the line with the DUMMY message and uncomment the one with the Welcome message
+    3.2. Look for the following line and make the requested changes
 
-	3.3. Commit the change
+        // _CHANGE_ : Please comment the line with the DUMMY message and uncomment the one with the Welcome message
 
-	3.4. Wercker will fire a workflow run for V1. Check the progress on Wercker Pipelines > Runs
+    3.3. Commit and push the change to your repo
 
-	![Workflow run](images/ms-w-run-initial-msg-change.png)
-	
-	3.5. Check Releases to confirm the new container image has been uploaded
+    3.4. Wercker will fire a workflow run for your V1 commit. Check the progress on the Wercker site by clicking the **Runs** tab
 
-	![Releases Image Uploaded](images/ms-w-run-initial-cr-image-v1.png)
-	
-	3.6. Check the Kubernetes dashboard to see if the latest version got deployed. Note: When re-deploying it takes ~35 seconds for K8s to terminate the old pods and start the new pod
+    ![Workflow run](images/ms-w-run-initial-msg-change.png)
 
-	![K8s Dashboard Shows Kubernetes Elements Created](images/ms-w-run-initial-k8s-dashboard.png)
-	
-	3.7. Check the pod logs
+    3.5. Click the **Releases** button in the top nav to confirm the new container image has been uploaded to the registry:
 
-	![Pod Logs](images/ms-w-run-initial-pod-logs.png)
-	
+    ![Releases Image Uploaded](images/ms-w-run-initial-cr-image-v1.png)
+
+    3.6. Check the Kubernetes dashboard to see if the latest version got deployed. Note: When re-deploying it takes ~35 seconds for K8s to terminate the old pods and start the new pod
+
+    ![K8s Dashboard Shows Kubernetes Elements Created](images/ms-w-run-initial-k8s-dashboard.png)
+
+    3.7. Check the pod logs
+
+    ![Pod Logs](images/ms-w-run-initial-pod-logs.png)
 
 ### Access GET "/api/creditscore" (in a Browser or in Postman)
 
-1. Access GET /api/creditscore in a browser and you should see the following Welcome message
+1. Access GET /api/creditscore in a browser and you should see the following Welcome message (assuming you have a proxy running to the Kubernetes cluster, you can hit that endpoint from here: http://localhost:8001/api/v1/namespaces/default/services/aura-js-creditscore:http/proxy/api/creditscore)
 
-		{ "MESSAGE": "Welcome to aura-js-creditscore version V1" }
+        { "MESSAGE": "Welcome to aura-js-creditscore version V1" }
 
 ![Access API in Browser](images/ms-api-access-browser-output-v1.png)
 
 2. (OPTIONAL) Access GET /api/creditscore in Postman and you should see the same Welcome message
 
-		{  
-		    "MESSAGE": "Welcome to aura-js-creditscore version V1"  
-		}
+        {  
+            "MESSAGE": "Welcome to aura-js-creditscore version V1"  
+        }
 
 ![Access API in Postman](images/ms-api-access-postman-output-v1.png)
 
-
 ### Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
-1. Check the pod logs
+1. Check the pod logs again to see the requests that are being logged
 
 ![Pod Logs](images/ms-pod-logs-v1.png)
 
 2. Access Vizceral console (Limited visibility for now, more on the roadmap)
 
-Known Issue: Screen shows the data flowing for ~1 minute. This view doesn't refresh automatically and must be refreshed manually by reloading the top level console
+Known Issue: Screen shows the data flowing for ~1 minute. This view doesn't refresh automatically and must be refreshed manually by reloading the top level console.
 
 URL: http://127.0.0.1:8001/api/v1/namespaces/default/services/aura-admin-service:admin-service/proxy/console/#/vizceral
 
