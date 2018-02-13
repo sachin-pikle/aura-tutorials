@@ -84,7 +84,7 @@ In this tutorial, we will go through the following flow:
 
     ![Add push-to-CR pipeline to Workflow](images/ms-w-workflow-add-push-to-CR.png)
 
-    1.2. Click the (+) sign next to the push-to-CR item and select **deploy-to-CE** pipeline and click \*Add\*\*:
+    1.2. Click the (+) sign next to the push-to-CR item and select **deploy-to-CE** pipeline and click **Add**:
 
     ![Add deploy-to-CE pipeline to Workflow](images/ms-w-workflow-add-deploy-to-CE.png)
 
@@ -120,7 +120,9 @@ In this tutorial, we will go through the following flow:
 
 ### Access GET "/api/creditscore" (in Browser/Postman) and observe the requests distributed between versions V1 and V2
 
-1. Access GET /api/creditscore in a browser and you should see the following Welcome message. For now you will notice some requests are served by V1 and others by V2 because we have both versions running side-by-side. In the next step we will route 100% of the traffic to V2
+1. You should have the public IP address from [Part 1](deploy_microservice.md)
+
+2. Access GET < public-ip-address > /api/creditscore in a browser and you should see the following Welcome message. For now you will notice some requests are served by V1 and others by V2 because we have both versions running side-by-side. In the next step we will route 100% of the traffic to V2
 
         { "MESSAGE": "Welcome to aura-js-creditscore version V2" }
 
@@ -130,7 +132,7 @@ In this tutorial, we will go through the following flow:
 
 ![Access API in Browser](images/ms-api-access-browser-output-v1.png)
 
-2. (OPTIONAL) Access GET /api/creditscore in Postman and you should see the same Welcome message. For now you will notice some requests are served by V1 and others by V2 because we have both versions running side-by-side. In the next step we will route 100% of the traffic to V2
+3. (OPTIONAL) Access GET /api/creditscore in Postman and you should see the same Welcome message. For now you will notice some requests are served by V1 and others by V2 because we have both versions running side-by-side. In the next step we will route 100% of the traffic to V2
 
         {  
             "MESSAGE": "Welcome to aura-js-creditscore version V2"  
@@ -160,7 +162,7 @@ Note: if you see any errors, make sure the commented/uncommented lines in `werck
 
 ![Wercker runs > "add" step logs](images/canary-w-run-step-logs.png)
 
-3. Once you successfully add a route rule, comment the "add" step. If you wish to change an existing routing rule, uncomment and use the "replace" step.
+3. Once you successfully add a route rule, comment the "add" step and uncomment the "deploy" step 
 
 4. Access GET /api/creditscore in a browser multiple times and you should see the following Welcome message from V2. Now we have 100% of the traffic routed to V2
 
