@@ -7,7 +7,7 @@ In this tutorial, we will go through the following flow:
 * Provision a MySQL instance using Service Broker
 * Connection settings for the MySQL service broker instance
 * Write code to connect microservice version V2 to the MySQL instance
-	![Part-3](images/Part-3.png)
+  ![Part-3](images/Part-3.png)
 * Access GET "/api/creditscore" (in a Browser or in Postman)
 * Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
@@ -15,13 +15,12 @@ In this tutorial, we will go through the following flow:
 
 ### Provision a MySQL instance using Service Broker
 
-1. Provision a Persistent Volume Claim (PVC) / Persistent Volume (PV) / OCI Block Volume using V2 > aura-js-creditscore-v2/mysql-pvc.yaml file 
+1. Provision a Persistent Volume Claim (PVC) / Persistent Volume (PV) / OCI Block Volume using V2 > aura-js-creditscore-v2/mysql-pvc.yaml file
 
-		$ kubectl apply -f https://raw.githubusercontent.com/sachin-pikle/aura-js-creditscore-v2/master/mysql-pvc.yaml
-		persistentvolumeclaim "mysql-pvc-01" created
+        $ kubectl apply -f https://raw.githubusercontent.com/sachin-pikle/aura-js-creditscore-v2/master/mysql-pvc.yaml
+        persistentvolumeclaim "mysql-pvc-01" created
 
-
-2. Check the PVC from the Kubernetes Dashboard
+2) Check the PVC from the Kubernetes Dashboard
 
 ![Persistent Volume Claim](images/sb-mysql-pvc.png)
 
@@ -33,45 +32,39 @@ In this tutorial, we will go through the following flow:
 
 ![Block Volume](images/sb-mysql-oci-block-volumes.png)
 
-5. Check the Volume Provisioner logs 
+5. Check the Volume Provisioner logs
 
 ![Volume Provisioner Logs](images/sb-mysql-volume-provisioner-logs.png)
 
-
 6. Go to Admin console > Service Brokers
 
-URL: http://127.0.0.1:8001/api/v1/namespaces/default/services/aura-admin-service:admin-service/proxy/console/#/serviceBrokers 
+URL: http://127.0.0.1:8001/api/v1/namespaces/default/services/aura-admin-service:admin-service/proxy/console/#/serviceBrokers
 
 ![Service Brokers](images/sb-list-pre.png)
 
-
 7. Select MySQL (thirdparty-mysql-service)
 
+8) Create New Instance of the MySQL service broker with the following values
 
-8. Create New Instance of the MySQL service broker with the following values
+    Instance Name: mysql-sb-inst-1
 
-	Instance Name: mysql-sb-inst-1
+    Plan: basic
 
-	Plan: basic
+    Parameters:
 
-	Parameters: 
+        Name: persistence.existingClaim
 
-		Name: persistence.existingClaim
-
-		Value: mysql-pvc-01  ... This is the name of the PVC we created above
+        Value: mysql-pvc-01  ... This is the name of the PVC we created above
 
 ![Create Instance](images/sb-mysql-create.png)
 
-
-9. MySQL service broker instance created 
+9. MySQL service broker instance created
 
 ![Instance Created](images/sb-mysql-created.png)
-
 
 10. Service Brokers home page
 
 ![Service Brokers](images/sb-list-post.png)
-
 
 11. Search "sb-inst" from the K8s dashboard
 
@@ -79,28 +72,23 @@ URL: http://127.0.0.1:8001/api/v1/namespaces/default/services/aura-admin-service
 
 ![MySQL Service Broker K8s Elements](images/sb-mysql-sb-inst-01-k8s-dashboard-2.png)
 
-
 12. OCI Dashboard you will see the block volume attached to an OCI instance
 
 ![Block Volume](images/sb-mysql-oci-block-volumes-attached.png)
 
-
-
 ### Connection settings for the MySQL service broker instance
 
-1. Service broker instance connection settings are automatically available as Kubernetes secrets. The secret name convention is secret-<sb-instance-name>. In this case the secret is secret-mysql-sb-inst-1. 
+1. Service broker instance connection settings are automatically available as Kubernetes secrets. The secret name convention is secret-<sb-instance-name>. In this case the secret is secret-mysql-sb-inst-1.
 
 ![Kubernetes mysql service broker secret](images/sb-mysql-secret.png)
 
 2. Now that we have the connection details in the secret, configure the application deployment section of the kubernetes yaml to access this secret via an env block. Edit V2 > aura-js-creditscore-v2/kubernetes-deployment.yml.template
 
-3. Look for the following line and make the requested changes 
+3. Look for the following line and make the requested changes
 
-		# _CHANGE_Part_3_Service_Broker_Integration_ : Uncomment the following env block to test service broker integration
+        # _CHANGE_Part_3_Service_Broker_Integration_ : Uncomment the following env block to test service broker integration
 
 ![Kubernetes yaml env block](images/sb-mysql-k8s-yml-env-block.png)
-
-
 
 ### Write code to connect microservice version V2 to the MySQL instance
 
@@ -108,14 +96,16 @@ URL: http://127.0.0.1:8001/api/v1/namespaces/default/services/aura-admin-service
 
 2. Look for the following lines and make the requested changes
 
-		// _CHANGE_Part_3_Service_Broker_Integration_ :
-		// 1) Comment the two methods res.setHeader() and res.send()
-		// 2) Uncomment the entire db code block below to use DB
+        // _CHANGE_Part_3_Service_Broker_Integration_ :
+        // 1) Comment the two methods res.setHeader() and res.send()
+        // 2) Uncomment the entire db code block below to use DB
 
 ![Code changes to connect to mysql](images/sb-mysql-code-changes-1.png)
 ![Code changes to connect to mysql](images/sb-mysql-code-changes-2.png)
 
-3. Commit the change
+NOTE: Don't forget to comment out the Istio route creation and uncomment the deployment - changes we did in Part II.
+
+3. Commit and push the change
 
 4. Wercker will fire the CI/CD workflow for V2. Check the progress on Wercker Pipelines > Runs.
 
@@ -134,24 +124,21 @@ URL: http://127.0.0.1:8001/api/v1/namespaces/default/services/aura-admin-service
 
 ![Pod Logs](images/ms-w-run-initial-pod-logs-v2.png)
 
-
 ### Access GET "/api/creditscore" (in a Browser or in Postman)
 
 1. Access GET /api/creditscore in a browser and you should see the following message indicating successful DB communication
 
-		{ "MESSAGE" : "SUCCESS communicating with DB" }
+        { "MESSAGE" : "SUCCESS communicating with DB" }
 
 ![Access API in Browser](images/sb-mysql-api-access-browser-output.png)
 
-
 2. (OPTIONAL) Access GET /api/creditscore in Postman and you should see the following message indicating successful DB communication
 
-		{  
-			"MESSAGE": "SUCCESS communicating with DB"  
-		}
+        {  
+        	"MESSAGE": "SUCCESS communicating with DB"  
+        }
 
 ![Access API in Postman](images/sb-mysql-api-access-postman-output.png)
-
 
 ### Observe the microservice behaviour (in Vizceral, Zipkin, Grafana)
 
