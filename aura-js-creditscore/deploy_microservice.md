@@ -25,7 +25,7 @@ In this tutorial, we will go through the following flow:
 
     2.1. Sign in to [Wercker](https://app.wercker.com)
 
-    2.2. Click the **Create your first application** button in the header of the page
+    2.2. Click the **+ > Add application** button in the header of the page
 
     2.3. Pick **GitHub** as your SCM and click **Next**.
 
@@ -35,7 +35,7 @@ In this tutorial, we will go through the following flow:
 
     2.6. Review the options you selected and click **Create** to create the app.
 
-    2.7. In your fork repo, review the aura-js-creditscore/wercker.yml file. Note the following differences as we use Istio side cars alongside our microservice
+    2.7. In your forked repo, review the aura-js-creditscore-v1/wercker.yml file. Note the following differences as we use Istio side cars alongside our microservice
 
     **a) kubectl step with embedded istioctl command for istio side car injection (manual)**
 
@@ -65,16 +65,16 @@ In this tutorial, we will go through the following flow:
 
     1.2. Click **Add new pipeline** button
 
-    1.3. Name the pipeline **deploy-to-CE** and use **deploy-app-to-oce** for YML pipeline name.
+    1.3. Name the pipeline **deploy-to-CE** and use **deploy-app-to-oce** for YML pipeline name(note that this is defined in the wercker.yml file in your forked repo)
 
-    1.4. Click **Create** to create the pipeline.
+    1.4. Click **Create** to create the pipeline
 
     1.5. Add pipeline environment variables for the following:
 
-        KUBERNETES_MASTER -- get this URL from your OKE Cluster details page.
-        KUBERNETES_TOKEN -- click your profile in top right -> Settings -> Personal Tokens and generate one
+        KUBERNETES_MASTER -- get this URL from your OKE Cluster details page. Don't forget to add the prefix "https://"
+        KUBERNETES_TOKEN -- click your profile icon in top right -> Settings -> Personal Tokens and generate one
         KUBERNETES_CLUSTER_ID -- use your OKE Cluster's ID (for eaxmple, you can use the first part from the Kubernetes Master URL)
-        DOCKER_EMAIL -- your email address
+        NOTE: We have hardcoded DOCKER_EMAIL value in the wercker.yaml file so you don't need to provide it in env variables 
 
     1.6. Your pipeline should look similar to the image below:
 
@@ -94,13 +94,13 @@ In this tutorial, we will go through the following flow:
 
     ![Add deploy-to-CE pipeline to Workflow](images/ms-w-workflow-add-deploy-to-CE.png)
 
-    1.3. Your pipeline should look like this:
+    1.3. Your workflow should look like this:
 
     ![All Workflows](images/ms-w-workflows.png)
 
 3. Deploy the app using wercker CI/CD
 
-    3.1. In your forked repo, open `aura-js-creditscore/routes/creditscore.js`
+    3.1. In your forked repo, open `aura-js-creditscore-v1/routes/creditscore.js`
 
     3.2. Look for the following line and make the requested changes
 
@@ -126,13 +126,15 @@ In this tutorial, we will go through the following flow:
 
 ### Access GET "/api/creditscore" (in a Browser or in Postman)
 
-1. Access GET /api/creditscore in a browser and you should see the following Welcome message (assuming you have a proxy running to the Kubernetes cluster, you can hit that endpoint from here: http://localhost:8001/api/v1/namespaces/default/services/aura-js-creditscore:http/proxy/api/creditscore)
+1. Get the public IP address from wercker > "aura-js-creditscore-v1" application > Runs > "deploy-to-CE" pipeline output > "get LoadBalancer public IP address" step
+
+2. Access GET <public-ip-address>/api/creditscore in a browser and you should see the following Welcome message
 
         { "MESSAGE": "Welcome to aura-js-creditscore version V1" }
 
 ![Access API in Browser](images/ms-api-access-browser-output-v1.png)
 
-2. (OPTIONAL) Access GET /api/creditscore in Postman and you should see the same Welcome message
+3. (OPTIONAL) Access GET /api/creditscore in Postman and you should see the same Welcome message
 
         {  
             "MESSAGE": "Welcome to aura-js-creditscore version V1"  
