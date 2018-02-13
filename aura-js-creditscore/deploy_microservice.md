@@ -90,7 +90,7 @@ In this tutorial, we will go through the following flow:
 
     ![Add push-to-CR pipeline to Workflow](images/ms-w-workflow-add-push-to-CR.png)
 
-    1.2. Click the (+) sign next to the push-to-CR item and select **deploy-to-CE** pipeline and click \*Add\*\*:
+    1.2. Click the (+) sign next to the push-to-CR item and select **deploy-to-CE** pipeline and click **Add**:
 
     ![Add deploy-to-CE pipeline to Workflow](images/ms-w-workflow-add-deploy-to-CE.png)
 
@@ -128,7 +128,7 @@ In this tutorial, we will go through the following flow:
 
 1. Get the public IP address from wercker > "aura-js-creditscore-v1" application > Runs > "deploy-to-CE" pipeline output > "get LoadBalancer public IP address" step
 
-2. Access GET <public-ip-address>/api/creditscore in a browser and you should see the following Welcome message
+2. Access GET < public-ip-address > /api/creditscore in a browser and you should see the following Welcome message
 
         { "MESSAGE": "Welcome to aura-js-creditscore version V1" }
 
