@@ -126,13 +126,15 @@ NOTE: Don't forget to comment out the Istio route creation and uncomment the dep
 
 ### Access GET "/api/creditscore" (in a Browser or in Postman)
 
-1. Access GET /api/creditscore in a browser and you should see the following message indicating successful DB communication
+1. You should have the public IP address from [Part 1](deploy_microservice.md)
+
+2. Access GET < public-ip-address > /api/creditscore in a browser and you should see the following message indicating successful DB communication
 
         { "MESSAGE" : "SUCCESS communicating with DB" }
 
 ![Access API in Browser](images/sb-mysql-api-access-browser-output.png)
 
-2. (OPTIONAL) Access GET /api/creditscore in Postman and you should see the following message indicating successful DB communication
+3. (OPTIONAL) Access GET < public-ip-address > /api/creditscore in Postman and you should see the following message indicating successful DB communication
 
         {  
         	"MESSAGE": "SUCCESS communicating with DB"  
