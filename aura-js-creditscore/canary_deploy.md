@@ -68,7 +68,7 @@ In this tutorial, we will go through the following flow:
         KUBERNETES_MASTER -- get this URL from your OKE Cluster details page.
         KUBERNETES_TOKEN -- click your profile in top right -> Settings -> Personal Tokens and generate one
         KUBERNETES_CLUSTER_ID -- use your OKE Cluster's ID (for eaxmple, you can use the first part from the Kubernetes Master URL)
-        DOCKER_EMAIL -- your email address
+        NOTE: We have hardcoded DOCKER_EMAIL value in the wercker.yaml file so you don't need to provide it in env variables
 
     1.6. Your pipeline should look similar to the image below:
 
@@ -88,7 +88,7 @@ In this tutorial, we will go through the following flow:
 
     ![Add deploy-to-CE pipeline to Workflow](images/ms-w-workflow-add-deploy-to-CE.png)
 
-    1.3. Your pipeline should look like this:
+    1.3. Your workflow should look like this:
 
     ![All Workflows](images/ms-w-workflows.png)
 
