@@ -1,0 +1,26 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Creditscore API",
+        "description": "Creditscore API for microservices demo"
+    },
+    "schemes": [
+        "http"
+    ],
+    "host": "129.213.14.185",
+    "basePath": "/api",
+    "paths": {
+        "/creditscore": {
+            "get": {
+                "summary": "creditscore",
+                "description": "creditscore string message.",
+                "responses": {
+                    "200": {
+                        "description": "creditscore message",
+                    }
+                }
+            }
+        }
+    }
+}
